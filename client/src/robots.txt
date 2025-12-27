@@ -1,0 +1,8 @@
+# robots.txt for https://adebayomuis.is-a.dev
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://adebayomuis.is-a.dev/sitemap.xml

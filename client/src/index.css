@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background:;
+    --foreground:;
+    --card:;
+    --card-foreground:;
+    --border:;
+  }
+
+  .light {
+  }
+
+  * {
+    @apply p-0 m-0 outline-none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
