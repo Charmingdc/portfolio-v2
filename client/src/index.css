@@ -4,11 +4,13 @@
 
 @layer base {
   :root {
-    --background:;
-    --foreground:;
-    --card:;
-    --card-foreground:;
-    --border:;
+    --background: 11 15 20;
+    --foreground: 230 234 240;
+    --card: 18 24 33;
+    --card-foreground: 221 227 234;
+    --border: 30 38 51;
+    --muted: 139 147 161;
+    --accent: 59 130 246;
   }
 
   .light {
