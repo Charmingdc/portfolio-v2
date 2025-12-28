@@ -1,26 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 11 15 20;
-    --foreground: 230 234 240;
-    --card: 18 24 33;
-    --card-foreground: 221 227 234;
-    --border: 30 38 51;
-    --muted: 139 147 161;
-    --accent: 59 130 246;
+  @font-face {
+    font-family: "Satoshi";
+    src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
   }
 
-  .light {
+  :root {
+    --background: 5 5 5;
+    --foreground: 200 210 212;
+    --card: 11 11 11;
+    --border: 15 15 15;
+    --card-foreground: 186 190 196;
+    --muted: 122 126 132;
+    --soft: 156 160 166;
+    --accent: 96 136 204;
   }
 
   * {
-    @apply p-0 m-0 outline-none;
+    @apply p-0 m-0;
+  }
+
+  :focus-visible {
+    outline: 1px solid rgb(var(--accent));
+    outline-offset: 1px;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-openSans text-sm;
+  }
+
+  h1,
+  h2 {
+    @apply font-montserrat font-semibold;
+  }
+}
+
+@layer components {
+  .section-tag {
+    @apply text-soft text-sm uppercase tracking-widest -mb-2;
+  }
+
+  .section-heading {
+    @apply text-xl font-bold;
+  }
+}
+
+@layer utilities {
+  .hero-bg {
+    background: radial-gradient(
+      600px circle at 20% 15%,
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .hero-bg {
+      background: radial-gradient(
+        800px circle at 20% 15%,
+        rgba(255, 255, 255, 0.08),
+        transparent 45%
+      );
+    }
   }
 }
