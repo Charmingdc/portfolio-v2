@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Layout = () => {
   return (
@@ -19,12 +20,14 @@ const Layout = () => {
 
       <main
         id="main"
-        className="w-screen flex flex-col items-center gap-[8.5rem]"
+        className="w-screen flex flex-col items-center gap-[8rem]"
       >
         <Outlet />
       </main>
 
-      <footer>{/* Footer content */}</footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

@@ -21,7 +21,7 @@
     --card-foreground: 186 190 196;
     --muted: 122 126 132;
     --soft: 156 160 166;
-    --accent: 96 136 204;
+    --accent: 96 136 244;
   }
 
   * {
@@ -34,11 +34,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-openSans text-sm;
+    @apply bg-background text-foreground font-openSans text-[0.9rem] md:text-base;
   }
 
   h1,
-  h2 {
+  h2,
+  h3 {
     @apply font-montserrat font-semibold;
   }
 }
