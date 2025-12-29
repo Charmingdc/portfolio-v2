@@ -44,7 +44,7 @@ const AboutSection = () => {
         </motion.p>
 
         <motion.p variants={itemVariants}>
-          I work with intention—asking the right questions, communicating
+          I work with intention, asking the right questions, communicating
           clearly, and delivering work that’s practical and dependable. If
           you’re looking for a developer who values clarity, execution, and
           long-term maintainability, I’d be a strong addition to your team.

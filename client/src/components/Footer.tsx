@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <section
       id="footer"
-      className="w-full flex flex-col items-center gap-1 mt-16"
+      className="w-full flex flex-col items-center gap-1 mt-[8rem]"
     >
       <p className="font-light"> Built with: </p>
 

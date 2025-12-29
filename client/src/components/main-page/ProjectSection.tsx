@@ -58,7 +58,7 @@ const ProjectSection = () => {
             <a
               href={`/projects/${project.name}`}
               target="_blank"
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-accent"
             >
               View Project <ExternalLink size={16} />
             </a>

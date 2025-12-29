@@ -5,7 +5,7 @@ import useMotionPresets from "@/hooks/useMotionPresets";
 type Socials = {
   link: string;
   text: string;
-  icon: React.ReactNode;
+  icon: React.ElementType;
 };
 
 const socials: Socials[] = [
@@ -44,7 +44,7 @@ const HeroSection = () => {
         variants={itemVariants}
         className="tracking-tight text-5xl font-black leading-[1.05] md:text-6xl"
       >
-        Adebayo Muis<span className="text-accent">.</span>
+        Adebayo Muis.
       </motion.h1>
 
       <motion.h2
@@ -64,7 +64,7 @@ const HeroSection = () => {
 
       <motion.article
         variants={itemVariants}
-        className="flex items-center gap-4 mt-4 text-soft text-sm"
+        className="flex flex-col gap-2 mt-4 text-soft text-sm"
       >
         {socials.map(social => {
           const Icon = social.icon;
@@ -75,7 +75,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noreferrer"
               variants={itemVariants}
-              className="flex items-center gap-2 py-[0.3rem] border-b border-soft"
+              className="w-fit flex items-center gap-2 py-[0.3rem] border-b border-soft transition-all duration-200 hover:border-accent"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -18,7 +18,7 @@ export default {
         border: "rgb(var(--border)/<alpha-value>)",
         muted: "rgb(var(--muted)/<alpha-value>)",
         soft: "rgb(var(--soft)/<alpha-value>)",
-        accent: "rgb(var(--accent)<alpha-value>)"
+        accent: "rgb(var(--accent)/<alpha-value>)"
       }
     }
   },
