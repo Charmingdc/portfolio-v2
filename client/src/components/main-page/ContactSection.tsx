@@ -20,7 +20,7 @@ const socials: Socials[] = [
     icon: Linkedin
   },
   {
-    link: "https://mailto:charmingdc002@gmail.com",
+    link: "mailto:charmingdc002@gmail.com",
     label: "Contact email address",
     icon: Mail
   },
@@ -60,6 +60,7 @@ const ContactSection = () => {
         initial="hide"
         whileInView="show"
         variants={containerVariants}
+        viewport={{ once: true, amount: 0.2 }}
         className="w-full flex items-center gap-4 mt-4"
       >
         {socials.map(social => {
@@ -72,8 +73,7 @@ const ContactSection = () => {
               target="_blank"
               variants={itemsVariant}
               whileHover={{ scale: 0.5 }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="flex items-center justify-center p-4 bg-card rounded-lg transition-all duration-200 active:text-accent hover:text-accent"
+              className="flex items-center justify-center p-4 border border-border rounded-xl transition-all duration-200 active:text-accent hover:text-accent"
             >
               <Icon />
             </motion.a>

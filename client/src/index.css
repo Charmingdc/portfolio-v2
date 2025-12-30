@@ -17,11 +17,15 @@
     --background: 5 5 5;
     --foreground: 200 210 212;
     --card: 11 11 11;
-    --border: 15 15 15;
+    --border: 18 18 18;
     --card-foreground: 186 190 196;
     --muted: 122 126 132;
     --soft: 156 160 166;
     --accent: 96 136 244;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   * {

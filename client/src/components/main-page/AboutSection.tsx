@@ -30,24 +30,16 @@ const AboutSection = () => {
         className="w-full flex flex-col gap-4 mt-2"
       >
         <motion.p variants={itemVariants}>
-          I’m Adebayo Muis, a web developer focused on building clear, usable,
-          and reliable web products. I care about writing code that makes sense,
-          interfaces that feel intuitive, and systems that hold up as products
-          grow.
+          Frontend software engineer building clear and reliable web products.
+          I’ve worked on real-world projects ranging from small tools to full
+          product interfaces, often integrating backend services to deliver
+          complete, production-ready features.
         </motion.p>
 
         <motion.p variants={itemVariants}>
-          I turn ideas and requirements into well-structured frontends that are
-          responsive, accessible, and easy to maintain. I pay close attention to
-          user flow, performance, and code quality so teams can move fast
-          without accumulating unnecessary complexity.
-        </motion.p>
-
-        <motion.p variants={itemVariants}>
-          I work with intention, asking the right questions, communicating
-          clearly, and delivering work that’s practical and dependable. If
-          you’re looking for a developer who values clarity, execution, and
-          long-term maintainability, I’d be a strong addition to your team.
+          I specialise in React, TypeScript, and TailwindCss, and regularly work
+          with Supabase, Firebase, and serverless functions, with a strong focus
+          on accessibility, performance, and long-term maintainability.
         </motion.p>
       </motion.article>
     </motion.section>

@@ -40,6 +40,7 @@ const SkillsSection = () => {
           <motion.div
             key={tool.altText}
             variants={itemVariants}
+            whileTap={{ scale: 0.8 }}
             className="flex items-center p-4 gap-2 border border-border rounded-lg"
           >
             <img

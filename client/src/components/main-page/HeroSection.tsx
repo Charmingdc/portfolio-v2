@@ -51,15 +51,16 @@ const HeroSection = () => {
         variants={itemVariants}
         className="text-soft text-lg flex items-center gap-2 md:text-xl"
       >
-        SWE — Frontend Engineer
+        Frontend Software Engineer
         <span className="animate-pulse text-accent -ml-1">|</span>
       </motion.h2>
 
       <motion.p
         variants={itemVariants}
-        className="max-w-[80%] text-muted max-w-md leading-relaxed -mt-4"
+        className="max-w-[85%] text-muted leading-relaxed -mt-4"
       >
-        I build pixel-perfect, accessible and human-centered web experiences.
+        I build clear, accessible, and production-ready web interfaces - with
+        thoughtful backend integration.
       </motion.p>
 
       <motion.article
