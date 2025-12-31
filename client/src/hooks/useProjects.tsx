@@ -78,18 +78,6 @@ const useProjects = () => {
       liveUrl: "https://thryve-alpha.vercel.app"
     },
     {
-      name: "HostImg",
-      type: "Image Hosting",
-      imgSources: ["/illustrations/hostimg-preview.jpg"],
-      description:
-        "A free image hosting website that lets you upload, share images, and generate HTML codes for embedding them on web pages.",
-      detailedDescription:
-        "HostImg is a lightweight image hosting platform built with HTML5, CSS3, JavaScript, and jQuery, deployed on Wapka. The app empowers users to upload, host, and share images effortlessly. It automatically generates sharable links and HTML embed codes for websites, forums, and blogs, making it ideal for creators and developers. By utilizing jQuery for interactivity and Wapka as the hosting environment, HostImg delivers fast and accessible functionality even with limited infrastructure. Despite being minimal, it embodies the core features of professional image hosting services, showcasing practicality and ingenuity with resource constraints.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "Wapka"],
-      date: "2024",
-      liveUrl: "https://hostimg.wapka.co"
-    },
-    {
       name: "SafeWords",
       githubLink: "https://github.com/Charmingdc/SafeWords",
       type: "Secure Text Encryption Tool",

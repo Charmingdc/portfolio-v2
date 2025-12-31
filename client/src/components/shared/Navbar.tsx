@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <ul
       onClick={() => navigate("/")}
-      className="w-screen fixed top-0 flex items-center justify-between bg-black/10 backdrop-blur-lg py-3 px-5 font-light z-50"
+      className="w-screen fixed top-0 flex items-center justify-between bg-[rgba(0,0,0,0.02)] backdrop-blur-md py-3 px-5 font-light z-50"
     >
       <li className="flex items-center gap-2">
         <img

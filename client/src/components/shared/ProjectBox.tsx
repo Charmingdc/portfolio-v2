@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
-import { ExternalLink, Layers, Github } from "lucide-react";
+import { ExternalLink, Info, Github } from "lucide-react";
 import { motion } from "motion/react";
 import useMotionPresets from "@/hooks/useMotionPresets";
 import type { Project } from "@/types";
 
-const ProjectBox = ({ project, idx }: { project: Project; idx: number }) => {
+interface ProjectBoxProps {
+  project: Project;
+  idx: number;
+  animateOnce?: boolean;
+}
+
+const ProjectBox: React.FC<ProjectBoxProps> = ({
+  project,
+  idx,
+  animateOnce = true
+}) => {
   const motionPresets = useMotionPresets();
   const cardVariants = motionPresets.fadeInLeft;
 
@@ -14,7 +24,7 @@ const ProjectBox = ({ project, idx }: { project: Project; idx: number }) => {
       initial="hide"
       whileInView="show"
       variants={cardVariants}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: animateOnce, amount: 0.2 }}
       className="w-full h-auto flex flex-col gap-4 p-6 border border-border rounded-xl"
     >
       <div className="w-full flex items-center justify-between">
@@ -58,7 +68,7 @@ const ProjectBox = ({ project, idx }: { project: Project; idx: number }) => {
           to={`/projects/${project.name}`}
           className="flex items-center gap-2 text-accent"
         >
-          Behind the Build <Layers size={16} />
+          Overview <Info size={16} />
         </Link>
       </div>
     </motion.div>

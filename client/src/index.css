@@ -14,14 +14,14 @@
   }
 
   :root {
-    --background: 5 5 5;
+    --background: 12 12 12;
     --foreground: 200 210 212;
-    --card: 11 11 11;
-    --border: 18 18 18;
+    --card: 16 16 16;
+    --border: 21 21 21;
     --card-foreground: 186 190 196;
     --muted: 122 126 132;
     --soft: 156 160 166;
-    --accent: 96 136 244;
+    --accent: 50 60 200;
   }
 
   html {
@@ -55,6 +55,10 @@
 
   .section-heading {
     @apply text-xl font-bold;
+  }
+
+  .project-info-seperator {
+    @apply w-full flex flex-col gap-2 pb-3 border-b border-border;
   }
 }
 
