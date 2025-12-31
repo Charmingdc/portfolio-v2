@@ -5,19 +5,11 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
-    --background: 12 12 12;
+    --background: 8 8 8;
     --foreground: 200 210 212;
-    --card: 16 16 16;
-    --border: 21 21 21;
+    --card: 12 12 12;
+    --border: 18 18 18;
     --card-foreground: 186 190 196;
     --muted: 122 126 132;
     --soft: 156 160 166;
