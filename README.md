@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# Charmingdc Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+A premium, motion-driven portfolio designed to showcase software engineering expertise with a focus on performance, accessibility, and clean aesthetics. This project serves as a digital headquarters, highlighting a diverse range of technical tools—from frontend frameworks like React and TypeScript to backend integrations with Firebase and Supabase.
 
-Currently, two official plugins are available:
+The application leverages high-performance animations and a modular architecture to provide a seamless user experience across all devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- ⚡ **Performance Optimized**: Built on Vite for lightning-fast development and optimized production builds.
+- 🎨 **Fluid Animations**: Sophisticated motion design using `motion/react` with custom presets for consistent transitions.
+- 📱 **Fully Responsive**: Mobile-first design implementation using Tailwind CSS utility classes.
+- 🔍 **SEO & Metadata**: Pre-configured with robots.txt, sitemap.xml, and comprehensive Open Graph tags for social media visibility.
+- ♿ **Accessibility First**: Includes "Skip to main content" links, semantic HTML, and respect for `prefers-reduced-motion` system settings.
+- 🛠️ **Modular Architecture**: Clean separation of concerns with custom hooks for data fetching (`useProjects`) and UI logic (`useMotionPresets`).
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Category | Tools |
+| :--- | :--- |
+| **Core Framework** | React 19, TypeScript |
+| **Styling** | Tailwind CSS, PostCSS |
+| **Animations** | Motion (formerly Framer Motion) |
+| **Routing** | React Router DOM v7 |
+| **Icons** | Lucide React |
+| **Build Tool** | Vite |
+| **Linter** | ESLint |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Follow these steps to set up the project locally on your machine:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  **Clone the Repository**:
+    ```bash
+    git clone git@github.com:Charmingdc/portfolio-v2
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2.  **Navigate to the Directory**:
+    ```bash
+    cd portfolio-v2
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4.  **Start Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+5.  **Build for Production**:
+    ```bash
+    npm run build
+    ```
+
+## Usage
+
+This portfolio is structured into two main views: the **Main Page** (Landing) and the **Projects Page**.
+
+- **Navigation**: Use the fixed navbar to return home or click on individual project cards to see a deep dive into the technical details.
+- **Project Exploration**: The `ProjectOverview` component dynamically renders details based on the project ID/Name, showing technologies used, live URLs, and a dedicated image gallery.
+- **Interactivity**: Hover over social icons or project cards to see smooth scaling effects and staggered entrance animations.
+- **Accessibility**: Use the `Tab` key to navigate. A "Skip to main content" link will appear for keyboard users to bypass the navigation.
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+- 🍴 Fork the Project
+- 🌿 Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+- 💾 Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+- 🚀 Push to the Branch (`git push origin feature/AmazingFeature`)
+- 📥 Open a Pull Request
+
+## Author Info
+
+**Adebayo Muis**
+Frontend Software Engineer dedicated to building clear, accessible, and production-ready web interfaces.
+
+- **Twitter**: [@Charmingdc01](https://x.com/Charmingdc01)
+- **LinkedIn**: [adebayomuis](https://linkedin.com/in/adebayomuis)
+- **Email**: charmingdc002@gmail.com
+
+---
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+
+[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
