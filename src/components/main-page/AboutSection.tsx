@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import ContributionGraph from "@/components/main-page/ContributionGraph";
 import useMotionPresets from "@/hooks/useMotionPresets";
 
 const AboutSection = () => {
@@ -42,6 +43,8 @@ const AboutSection = () => {
           on accessibility, performance, and long-term maintainability.
         </motion.p>
       </motion.article>
+
+      <ContributionGraph />
     </motion.section>
   );
 };
