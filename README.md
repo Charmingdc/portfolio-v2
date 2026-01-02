@@ -1,88 +1,73 @@
 # Charmingdc Portfolio 🚀
 
-## Description
-A premium, motion-driven portfolio designed to showcase software engineering expertise with a focus on performance, accessibility, and clean aesthetics. This project serves as a digital headquarters, highlighting a diverse range of technical tools—from frontend frameworks like React and TypeScript to backend integrations with Firebase and Supabase.
+## Overview
+A high-performance, accessible, and visually striking personal portfolio built with **React 19**, **TypeScript**, and **Vite**. This project serves as a professional showcase of frontend engineering expertise, featuring fluid animations via **Motion**, a grain-textured aesthetic, and a modular architecture designed for maintainability.
 
-The application leverages high-performance animations and a modular architecture to provide a seamless user experience across all devices.
+It focuses on delivering a seamless user experience with optimized SEO, responsive layouts, and integrated GitHub contribution tracking to provide recruiters with a clear view of technical proficiency and activity.
 
 ## Features
-- ⚡ **Performance Optimized**: Built on Vite for lightning-fast development and optimized production builds.
-- 🎨 **Fluid Animations**: Sophisticated motion design using `motion/react` with custom presets for consistent transitions.
-- 📱 **Fully Responsive**: Mobile-first design implementation using Tailwind CSS utility classes.
-- 🔍 **SEO & Metadata**: Pre-configured with robots.txt, sitemap.xml, and comprehensive Open Graph tags for social media visibility.
-- ♿ **Accessibility First**: Includes "Skip to main content" links, semantic HTML, and respect for `prefers-reduced-motion` system settings.
-- 🛠️ **Modular Architecture**: Clean separation of concerns with custom hooks for data fetching (`useProjects`) and UI logic (`useMotionPresets`).
-
-## Technologies Used
-
-| Category | Tools |
-| :--- | :--- |
-| **Core Framework** | React 19, TypeScript |
-| **Styling** | Tailwind CSS, PostCSS |
-| **Animations** | Motion (formerly Framer Motion) |
-| **Routing** | React Router DOM v7 |
-| **Icons** | Lucide React |
-| **Build Tool** | Vite |
-| **Linter** | ESLint |
+- **Modern Tech Stack**: Leverages the latest React 19 features and TypeScript for robust type safety.
+- **Fluid Animations**: Custom-built motion presets using `framer-motion` for consistent and accessible transitions.
+- **Dynamic Project Routing**: Detailed overview pages for every project with deep-linking capabilities.
+- **Grainy Aesthetic**: Custom CSS-based grain overlay for a unique, modern UI feel.
+- **GitHub Integration**: Real-time contribution graph visualization using `react-github-calendar`.
+- **SEO Optimized**: Includes pre-configured `sitemap.xml`, `robots.txt`, and metadata for search engine visibility.
+- **Performance Focused**: Component lazy loading and optimized asset delivery via Vite.
 
 ## Getting Started
 
 ### Installation
+Follow these steps to set up the project locally:
 
-Follow these steps to set up the project locally on your machine:
+1. **Clone the Repository**:
+   ```bash
+   git clone git@github.com:Charmingdc/portfolio-v2
+   ```
 
-1.  **Clone the Repository**:
-    ```bash
-    git clone git@github.com:Charmingdc/portfolio-v2
-    ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd portfolio-v2
+   ```
 
-2.  **Navigate to the Directory**:
-    ```bash
-    cd portfolio-v2
-    ```
+3. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-3.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
+4. **Start the Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-4.  **Start Development Server**:
-    ```bash
-    npm run dev
-    ```
-
-5.  **Build for Production**:
-    ```bash
-    npm run build
-    ```
+### Deployment
+The project is configured for seamless deployment on **Vercel** using the included `vercel.json` for SPA routing support.
 
 ## Usage
+The portfolio is designed to be easily updated:
 
-This portfolio is structured into two main views: the **Main Page** (Landing) and the **Projects Page**.
+- **Adding Projects**: Modify the `src/hooks/useProjects.tsx` file. The project utilizes a custom hook to manage the portfolio data, ensuring that adding or removing items updates both the main landing page and the dedicated projects list.
+- **Customizing Skills**: Update `src/hooks/useTools.tsx` to reflect your current tech stack.
+- **Theming**: Colors and spacing are managed via `tailwind.config.js` and CSS variables in `src/index.css` for easy global adjustments.
 
-- **Navigation**: Use the fixed navbar to return home or click on individual project cards to see a deep dive into the technical details.
-- **Project Exploration**: The `ProjectOverview` component dynamically renders details based on the project ID/Name, showing technologies used, live URLs, and a dedicated image gallery.
-- **Interactivity**: Hover over social icons or project cards to see smooth scaling effects and staggered entrance animations.
-- **Accessibility**: Use the `Tab` key to navigate. A "Skip to main content" link will appear for keyboard users to bypass the navigation.
+## Technologies Used
 
-## Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-- 🍴 Fork the Project
-- 🌿 Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-- 💾 Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-- 🚀 Push to the Branch (`git push origin feature/AmazingFeature`)
-- 📥 Open a Pull Request
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | [React 19](https://react.dev/) | UI Library |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) | Type Safety |
+| **Build Tool** | [Vite](https://vitejs.dev/) | Fast Development & Bundling |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | Utility-first Styling |
+| **Animations** | [Motion](https://motion.dev/) | Smooth UI Transitions |
+| **Routing** | [React Router 7](https://reactrouter.com/) | Client-side Navigation |
+| **Icons** | [Lucide React](https://lucide.dev/) | Minimalist Icon Set |
 
 ## Author Info
+**Adebayo Muis**  
+Frontend Software Engineer specialized in building clear, accessible, and production-ready web interfaces.
 
-**Adebayo Muis**
-Frontend Software Engineer dedicated to building clear, accessible, and production-ready web interfaces.
-
-- **Twitter**: [@Charmingdc01](https://x.com/Charmingdc01)
+- **X (Twitter)**: [@Charmingdc01](https://x.com/Charmingdc01)
 - **LinkedIn**: [adebayomuis](https://linkedin.com/in/adebayomuis)
-- **Email**: charmingdc002@gmail.com
+- **Email**: [charmingdc002@gmail.com](mailto:charmingdc002@gmail.com)
 
 ---
 
@@ -90,5 +75,6 @@ Frontend Software Engineer dedicated to building clear, accessible, and producti
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 [![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
