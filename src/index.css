@@ -8,12 +8,25 @@
   :root {
     --background: 8 8 8;
     --foreground: 200 210 212;
-    --card: 12 12 12;
-    --border: 18 18 18;
+    --card: 14 14 14;
+    --border: 20 20 20;
     --card-foreground: 186 190 196;
     --muted: 122 126 132;
     --soft: 156 160 166;
-    --accent: 50 60 200;
+    --accent: 60 80 220;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --background: 245 245 245;
+      --foreground: 20 20 20;
+      --card: 250 250 250;
+      --border: 220 220 220;
+      --card-foreground: 40 40 40;
+      --muted: 110 110 110;
+      --soft: 150 150 150;
+      --accent: 80 90 255;
+    }
   }
 
   html {
@@ -51,6 +64,65 @@
 
   .project-info-seperator {
     @apply w-full flex flex-col gap-2 pb-3 border-b border-border;
+  }
+
+  .has-grain::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    pointer-events: none;
+    background-image: url("https://bedes.qui.gg/images/framernoise.png");
+    opacity: 0.08;
+    z-index: 100;
+    animation:
+      fadeInGrain 2s ease forwards,
+      animateGrain 8s steps(10) infinite;
+  }
+
+  @keyframes fadeInGrain {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.08;
+    }
+  }
+
+  @keyframes animateGrain {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-5%, -10%);
+    }
+    20% {
+      transform: translate(-15%, -20%);
+    }
+    30% {
+      transform: translate(-5%, -10%);
+    }
+    40% {
+      transform: translate(-15%, -20%);
+    }
+    50% {
+      transform: translate(-5%, -10%);
+    }
+    60% {
+      transform: translate(-15%, -20%);
+    }
+    70% {
+      transform: translate(-5%, -10%);
+    }
+    80% {
+      transform: translate(-15%, -20%);
+    }
+    90% {
+      transform: translate(-5%, -10%);
+    }
   }
 }
 
