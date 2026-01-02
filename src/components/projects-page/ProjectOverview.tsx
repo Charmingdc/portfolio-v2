@@ -13,7 +13,7 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
   return (
     <section
       aria-label={`${projectName}'s Overview`}
-      className="w-full flex flex-col gap-3 px-8 mt-[7rem]"
+      className="w-full flex flex-col gap-3 px-6 mt-[7rem]"
     >
       <button
         onClick={() => navigate(-1)}
@@ -50,7 +50,7 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
       <img
         src={project.imgSources[0]}
         alt={`${project.name}'s Preview`}
-        className="rounded-xl"
+        className="bg-card border-2 border-border rounded-xl"
       />
 
       <article
