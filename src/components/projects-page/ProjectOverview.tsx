@@ -36,7 +36,7 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
 
         {project.githubLink && (
           <a
-            href={project.liveUrl}
+            href={project.githubLink}
             target="_blank"
             className="w-fit flex items-center gap-2 py-4 px-5 bg-card rounded-xl"
           >
