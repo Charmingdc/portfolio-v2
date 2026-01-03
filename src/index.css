@@ -14,6 +14,7 @@
     --muted: 122 126 132;
     --soft: 156 160 166;
     --accent: 60 80 220;
+    --overlay: 0 0 0;
   }
 
   @media (prefers-color-scheme: light) {
@@ -26,6 +27,7 @@
       --muted: 110 110 110;
       --soft: 150 150 150;
       --accent: 80 90 255;
+      --overlay: 255 255 255;
     }
   }
 
