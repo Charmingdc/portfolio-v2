@@ -6,9 +6,12 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
   const navigate = useNavigate();
   const { allProjects } = useProjects();
 
-  const project = allProjects.find(project => project.name === projectName);
+  const project = allProjects.find(
+    project => project.name.toLowerCase() === projectName
+  );
 
-  if (!project) return <h1>No Project Found </h1>;
+  if (!project)
+    return <h1 className="text-2xl mt-[7rem]">No Project Found </h1>;
 
   return (
     <section

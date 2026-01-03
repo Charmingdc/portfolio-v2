@@ -65,7 +65,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
         </Link>
 
         <Link
-          to={`/projects/${project.name}`}
+          to={`/projects/${project.name.toLowerCase()}`}
           className="flex items-center gap-2 text-accent"
         >
           Overview <Info size={16} />
