@@ -78,7 +78,7 @@
     pointer-events: none;
     background-image: url("https://bedes.qui.gg/images/framernoise.png");
     opacity: 0.08;
-    z-index: 100;
+    z-index: 30;
     animation:
       fadeInGrain 2s ease forwards,
       animateGrain 8s steps(10) infinite;

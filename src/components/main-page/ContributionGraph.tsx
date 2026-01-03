@@ -45,15 +45,17 @@ const ContributionGraph = () => {
       </div>
 
       {isDropDownOpen && (
-        <div className="absolute right-4 top-10 w-fit flex flex-col bg-card gap-2 py-2 px-4">
+        <motion.div
+          initial="hide"
+          whileInView="show"
+          variants={fadeIn}
+          className="absolute right-4 top-10 w-fit flex flex-col bg-card gap-2 py-2 px-4"
+        >
           {years
             .sort((a, b) => b - a)
             .map(year => (
               <motion.button
                 key={year}
-                initial="hide"
-                whileInView="show"
-                variants={fadeIn}
                 onClick={() => {
                   setIsDropDownOpen(false);
                   setSelectedYear(year);
@@ -63,7 +65,7 @@ const ContributionGraph = () => {
                 {year}
               </motion.button>
             ))}
-        </div>
+        </motion.div>
       )}
 
       <div className="w-full" onClick={() => setIsDropDownOpen(false)}>
