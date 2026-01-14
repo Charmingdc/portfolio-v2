@@ -90,28 +90,20 @@ const useProjects = () => {
       liveUrl: "https://bookquest-eosin.vercel.app"
     },
     {
-      name: "Thryve",
-      githubLink: "https://github.com/Charmingdc/Thryve",
-      type: "Gratitude Journaling App",
+      name: "Romanify",
+      githubLink: "https://github.com/Charmingdc/Romanify",
+      type: "Number-to-Roman converter",
       imgSources: [
-        "/illustrations/thryve-preview.jpg",
-        "/illustrations/thryve-preview-02.jpg",
-        "/illustrations/thryve-preview-03.jpg"
+        "/illustrations/romanify-preview.jpg",
+        "/illustrations/romanify-preview-02.jpg"
       ],
       description:
-        "A gratitude journaling web app with stress-relief features, including calendar view for tracking entries and streak counts for motivation.",
+        "Romanify is a minimalistic, open-source library that converts numbers into Roman numerals, including large values with overlines.",
       detailedDescription:
-        "Thryve is a gratitude journaling app built with ReactJS for a reactive UI and Firebase for backend services. The app encourages mindfulness by allowing users to log their gratitude entries daily. Its calendar integration provides a clear visualization of journaling consistency, while streak counts motivate users to maintain healthy habits. Firebase handles real-time data sync, authentication, and secure storage, ensuring user data remains private and reliable. By blending simplicity with modern frontend technologies, Thryve transforms gratitude journaling into a gamified, motivating, and interactive experience.",
-      technologies: [
-        "JavaScript",
-        "ReactJS",
-        "CSS3",
-        "Firebase",
-        "Sonner",
-        "Vite"
-      ],
-      date: "2025",
-      liveUrl: "https://thryve-alpha.vercel.app"
+        "Romanify is a lightweight TypeScript library for converting integers into Roman numerals. It supports numbers beyond 3999 using overline notation, making it perfect for websites, documentation, or creative projects that want that classic numeral aesthetic. The library focuses on clarity, correctness, and zero-nonsense usage. Designed with maintainability in mind, Romanify is ideal for developers who want a fast, reliable, and open-source solution to display Roman numerals programmatically.",
+      technologies: ["TypeScript", "Node.js", "ES Modules"],
+      date: "2026",
+      liveUrl: "https://romanify.vercel.app"
     },
     {
       name: "SafeWords",
@@ -137,6 +129,30 @@ const useProjects = () => {
       ],
       date: "2025",
       liveUrl: "https://safewords.vercel.app"
+    },
+    {
+      name: "Thryve",
+      githubLink: "https://github.com/Charmingdc/Thryve",
+      type: "Gratitude Journaling App",
+      imgSources: [
+        "/illustrations/thryve-preview.jpg",
+        "/illustrations/thryve-preview-02.jpg",
+        "/illustrations/thryve-preview-03.jpg"
+      ],
+      description:
+        "A gratitude journaling web app with stress-relief features, including calendar view for tracking entries and streak counts for motivation.",
+      detailedDescription:
+        "Thryve is a gratitude journaling app built with ReactJS for a reactive UI and Firebase for backend services. The app encourages mindfulness by allowing users to log their gratitude entries daily. Its calendar integration provides a clear visualization of journaling consistency, while streak counts motivate users to maintain healthy habits. Firebase handles real-time data sync, authentication, and secure storage, ensuring user data remains private and reliable. By blending simplicity with modern frontend technologies, Thryve transforms gratitude journaling into a gamified, motivating, and interactive experience.",
+      technologies: [
+        "JavaScript",
+        "ReactJS",
+        "CSS3",
+        "Firebase",
+        "Sonner",
+        "Vite"
+      ],
+      date: "2025",
+      liveUrl: "https://thryve-alpha.vercel.app"
     },
     {
       name: "SwiftScan",

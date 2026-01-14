@@ -15,7 +15,7 @@ const AboutSection = () => {
         y: 0,
         transition: { duration: 0.8, ease: "easeInOut" }
       }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       className="w-full flex flex-col gap-3 pt-10 px-8 -mt-[8rem]"
     >
       <span className="section-tag"> About Me </span>

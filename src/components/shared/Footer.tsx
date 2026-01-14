@@ -1,3 +1,5 @@
+import { romanize } from "@charmingdc/romanify";
+
 const Footer = () => {
   return (
     <section
@@ -11,7 +13,7 @@ const Footer = () => {
       </h3>
 
       <p className="font-light text-sm mt-1 mb-4">
-        Copyright © {new Date().getFullYear()} Adebayo Muis
+        © {romanize(new Date().getFullYear())} Adebayo Muis
       </p>
     </section>
   );
