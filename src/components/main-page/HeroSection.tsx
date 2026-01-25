@@ -11,6 +11,10 @@ const socials: Socials[] = [
   { link: "https://x.com/Charmingdc01", text: "Say hi on 𝕏" },
   {
     link: "https://github.com/Charmingdc",
+    text: "Read my Articles"
+  },
+  {
+    link: "https://github.com/Charmingdc",
     text: "Connect on Github"
   }
 ];

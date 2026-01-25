@@ -57,12 +57,13 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
       <p className="text-muted">{project.description}</p>
 
       <div className="w-full flex items-center justify-between mt-1">
-        <Link
-          to={project.liveUrl}
+        <a
+          hrer={project.liveUrl}
+          target="_blank"
           className="flex items-center gap-2 text-accent"
         >
           Live Url <ExternalLink size={16} />
-        </Link>
+        </a>
 
         <Link
           to={`/projects/${project.name.toLowerCase()}`}

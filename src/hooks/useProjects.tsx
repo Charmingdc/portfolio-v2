@@ -36,7 +36,7 @@ const useProjects = () => {
         "TypeScript",
         "React",
         "Tailwind CSS",
-        "Framer Motion",
+        "Motion",
         "Node.js (Serverless)",
         "Vercel Functions",
         "Vite",
@@ -173,7 +173,7 @@ const useProjects = () => {
     }
   ];
 
-  const projects = allProjects.slice(0, 4);
+  const projects = allProjects.slice(0, 5);
 
   return { projects, allProjects };
 };
