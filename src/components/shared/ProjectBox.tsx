@@ -58,7 +58,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
 
       <div className="w-full flex items-center justify-between mt-1">
         <a
-          hrer={project.liveUrl}
+          href={project.liveUrl}
           target="_blank"
           className="flex items-center gap-2 text-accent"
         >
