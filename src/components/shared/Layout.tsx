@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="relative min-h-screen has-grain">
+    <div className="relative min-h-screen">
       <div className="min-screen inset-0 bg-overlay/60 pointer-events-auto z-30">
         <a
           href="#main"
