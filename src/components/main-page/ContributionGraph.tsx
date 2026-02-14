@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowUp01Icon, ArrowDown01Icon } from "@hugeicons/core-free-icons";
 import { GitHubCalendar } from "react-github-calendar";
 
 import useMotionPresets from "@/hooks/useMotionPresets";
@@ -31,7 +32,8 @@ const ContributionGraph = () => {
       whileInView="show"
       variants={fadeInLeft}
       viewport={{ once: true }}
-      className="relative w-full flex flex-col items-center gap-4 p-2 border border-border mt-4"
+      className="relative w-full flex flex-col items-center gap-4 p-2 border
+      border-border rounded-md mt-4"
     >
       <div className="w-full flex items-center justify-between text-soft font-extrabold pt-0 pb-2 border-b border-border">
         <span>My Contribution Graph</span>
@@ -40,7 +42,12 @@ const ContributionGraph = () => {
           className="w-20 flex items-center justify-center gap-1"
           onClick={() => setIsDropDownOpen(prev => !prev)}
         >
-          {selectedYear} {isDropDownOpen ? <ChevronUp /> : <ChevronDown />}
+          {selectedYear}{" "}
+          {isDropDownOpen ? (
+            <HugeiconsIcon icon={ArrowUp01Icon} />
+          ) : (
+            <HugeiconsIcon icon={ArrowDown01Icon} />
+          )}
         </button>
       </div>
 

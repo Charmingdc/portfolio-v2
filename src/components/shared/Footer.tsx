@@ -8,8 +8,8 @@ const Footer = () => {
     >
       <p className="font-light"> Built with: </p>
 
-      <h3 className="text-md tracking-tighter font-montserrat font-extrabold -mt-1">
-        React.Js • TailwindCss
+      <h3 className="text-md tracking-tighter font-mono font-bold -mt-1">
+        React.Js \\ TailwindCss
       </h3>
 
       <p className="font-light text-sm mt-1 mb-4">

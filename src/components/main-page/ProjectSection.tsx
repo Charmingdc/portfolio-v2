@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ExternalLink } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import ProjectBox from "@/components/shared/ProjectBox";
 import useProjects from "@/hooks/useProjects";
 
@@ -35,7 +36,8 @@ const ProjectSection = () => {
             to="/projects"
             className="flex items-center justify-center gap-2 text-accent"
           >
-            View all projects <ExternalLink size={16} />
+            View all projects{" "}
+            <HugeiconsIcon icon={LinkSquare01Icon} size={16} />
           </Link>
         </div>
       </motion.article>

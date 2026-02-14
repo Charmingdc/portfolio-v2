@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 8 8 8;
+    --background: 20 20 20;
     --foreground: 200 210 212;
     --card: 12 12 12;
-    --border: 18 18 18;
+    --border: 30 30 30;
     --card-foreground: 186 190 196;
     --muted: 122 126 132;
     --soft: 156 160 166;

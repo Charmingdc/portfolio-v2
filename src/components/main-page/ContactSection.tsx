@@ -1,33 +1,39 @@
-import { Twitter, Linkedin, Mail, Github } from "lucide-react";
+import { HugeiconsIcon, type IconSvgElement } from "@hugeicons/react";
+import {
+  NewTwitterIcon,
+  Linkedin02Icon,
+  Mail01Icon,
+  GithubIcon
+} from "@hugeicons/core-free-icons";
 import { motion } from "motion/react";
 import useMotionPresets from "@/hooks/useMotionPresets";
 
 type Socials = {
   link: string;
   label: string;
-  icon: React.ElementType;
+  icon: IconSvgElement;
 };
 
 const socials: Socials[] = [
   {
     link: "https://x.com/Charmingdc01",
     label: "Adebayo Muis X ( Formerly Twitter ) profile link",
-    icon: Twitter
+    icon: NewTwitterIcon
   },
   {
     link: "https://linkedin.com/in/adebayomuis",
     label: "Adebayo Muis Linkedin profile link",
-    icon: Linkedin
+    icon: Linkedin02Icon
   },
   {
     link: "mailto:charmingdc002@gmail.com",
     label: "Contact email address",
-    icon: Mail
+    icon: Mail01Icon
   },
   {
     link: "https://github.com/Charmingdc",
     label: "Adebayo Muis github accountlink",
-    icon: Github
+    icon: GithubIcon
   }
 ];
 
@@ -75,7 +81,7 @@ const ContactSection = () => {
               whileHover={{ scale: 0.5 }}
               className="flex items-center justify-center p-4 border border-border rounded-xl transition-all duration-200 active:text-accent hover:text-accent"
             >
-              <Icon />
+              <HugeiconsIcon icon={Icon} />
             </motion.a>
           );
         })}

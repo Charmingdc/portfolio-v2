@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { ExternalLink, Info, Github } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  LinkSquare01Icon,
+  InformationCircleIcon,
+  GithubIcon
+} from "@hugeicons/core-free-icons";
 import { motion } from "motion/react";
 import useMotionPresets from "@/hooks/useMotionPresets";
 import type { Project } from "@/types";
@@ -39,7 +44,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
             target="_blank"
             className="w-fit flex items-center gap-2 p-2 border border-border rounded-lg"
           >
-            Source <Github size={14} />
+            Source <HugeiconsIcon icon={GithubIcon} size={14} />
           </a>
         )}
       </div>
@@ -62,14 +67,14 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
           target="_blank"
           className="flex items-center gap-2 text-accent"
         >
-          Live Url <ExternalLink size={16} />
+          Live Url <HugeiconsIcon icon={LinkSquare01Icon} size={16} />
         </a>
 
         <Link
           to={`/projects/${project.name.toLowerCase()}`}
           className="flex items-center gap-2 text-accent"
         >
-          Overview <Info size={16} />
+          Overview <HugeiconsIcon icon={InformationCircleIcon} size={16} />
         </Link>
       </div>
     </motion.div>

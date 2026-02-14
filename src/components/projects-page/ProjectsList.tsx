@@ -1,4 +1,5 @@
-import { ArrowLeft } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft02Icon } from "@hugeicons/core-free-icons";
 import { useNavigate } from "react-router-dom";
 import useProjects from "@/hooks/useProjects";
 import ProjectBox from "@/components/shared/ProjectBox";
@@ -13,7 +14,7 @@ const ProjectsList = () => {
         onClick={() => navigate(-1)}
         className="w-fit flex items-center gap-2 text-sm text-muted hover:text-foreground transition mb-8"
       >
-        <ArrowLeft size={16} />
+        <HugeiconsIcon icon={ArrowLeft02Icon} size={18} />
         Back Home
       </button>
 

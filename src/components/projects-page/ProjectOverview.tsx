@@ -1,4 +1,9 @@
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowLeft02Icon,
+  LinkSquare01Icon,
+  GithubIcon
+} from "@hugeicons/core-free-icons";
 import { useNavigate } from "react-router-dom";
 import useProjects from "@/hooks/useProjects";
 
@@ -22,7 +27,7 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
         onClick={() => navigate(-1)}
         className="w-fit flex items-center gap-2 text-sm text-muted hover:text-foreground transition mb-4"
       >
-        <ArrowLeft size={16} />
+        <HugeiconsIcon icon={ArrowLeft02Icon} size={18} />
         Back
       </button>
 
@@ -34,7 +39,7 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
           target="_blank"
           className="w-fit flex items-center gap-2 py-4 px-5 bg-card rounded-xl"
         >
-          <ExternalLink size={18} /> Live URL
+          <HugeiconsIcon icon={LinkSquare01Icon} size={18} /> Live URL
         </a>
 
         {project.githubLink && (
@@ -43,7 +48,7 @@ const ProjectOverview = ({ projectName }: { projectName: string }) => {
             target="_blank"
             className="w-fit flex items-center gap-2 py-4 px-5 bg-card rounded-xl"
           >
-            <Github size={18} /> Source
+            <HugeiconsIcon icon={GithubIcon} size={18} /> Source
           </a>
         )}
       </div>
