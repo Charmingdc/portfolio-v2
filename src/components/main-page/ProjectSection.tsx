@@ -26,7 +26,7 @@ const ProjectSection = () => {
         problem-solving projects.
       </p>
 
-      <motion.article className="w-full flex items-center flex-wrap gap-6 mt-4">
+      <motion.article className="w-full flex items-center flex-wrap gap-6 px-2 mt-4">
         {projects.map((project, idx) => (
           <ProjectBox key={idx} project={project} idx={idx} />
         ))}
