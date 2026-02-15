@@ -11,7 +11,7 @@ type Socials = {
 const socials: Socials[] = [
   { link: "https://x.com/Charmingdc01", text: "Say hi on 𝕏" },
   {
-    link: "https://medium.com/adebayomuis",
+    link: "https://medium.com/@adebayomuis",
     text: "Read my Articles"
   },
   {
