@@ -1,149 +1,157 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+ :root {
+  --background: 10 10 10;
+  --foreground: 180 180 180;
+  --card: 16 16 16;
+  --border: 28 28 28;
+  --card-foreground: 150 150 150;
+  --muted: 80 80 80;
+  --soft: 110 110 110;
+  --accent: 255 255 255;
+  --overlay: 0 0 0;
+ }
+
+ @media (prefers-color-scheme: light) {
   :root {
-    --background: 20 20 20;
-    --foreground: 200 210 212;
-    --card: 12 12 12;
-    --border: 30 30 30;
-    --card-foreground: 186 190 196;
-    --muted: 122 126 132;
-    --soft: 156 160 166;
-    --accent: 60 80 220;
-    --overlay: 0 0 0;
+   --background: 245 245 245;
+   --foreground: 40 40 40;
+   --card: 255 255 255;
+   --border: 220 220 220;
+   --card-foreground: 60 60 60;
+   --muted: 130 130 130;
+   --soft: 150 150 150;
+   --accent: 0 0 0;
+   --overlay: 255 255 255;
   }
+ }
 
-  @media (prefers-color-scheme: light) {
-    :root {
-      --background: 240 240 240;
-      --foreground: 30 30 30;
-      --card: 250 250 250;
-      --border: 220 220 220;
-      --card-foreground: 40 40 40;
-      --muted: 90 90 90;
-      --soft: 120 120 120;
-      --accent: 80 90 255;
-      --overlay: 255 255 255;
-    }
-  }
+ html {
+  scroll-behavior: smooth;
+ }
 
-  html {
-    scroll-behavior: smooth;
-  }
+ * {
+  @apply p-0 m-0;
+ }
 
-  * {
-    @apply p-0 m-0;
-  }
+ :focus-visible {
+  outline: 1px solid rgb(var(--accent));
+  outline-offset: 1px;
+ }
 
-  :focus-visible {
-    outline: 1px solid rgb(var(--accent));
-    outline-offset: 1px;
-  }
+ body {
+  @apply bg-background text-foreground font-inter text-[0.9rem] md:text-base antialiased tracking-tight;
+ }
 
-  body {
-    @apply bg-background text-foreground font-openSans text-[0.9rem] md:text-base;
-  }
+ h1,
+ h2,
+ h3 {
+  @apply font-header font-black uppercase tracking-[-0.05em];
+ }
 
-  h1,
-  h2,
-  h3 {
-    @apply font-montserrat font-semibold;
-  }
+ .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+ }
+ .scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+ }
 }
 
 @layer components {
-  .section-tag {
-    @apply text-soft text-sm uppercase tracking-widest -mb-2;
-  }
+ .section-tag {
+  @apply text-soft text-[10px] font-bold uppercase tracking-[0.2em] -mb-2;
+ }
 
-  .section-heading {
-    @apply text-xl font-bold;
-  }
+ .section-heading {
+  @apply text-4xl md:text-6xl font-black uppercase leading-[0.9] tracking-[-0.05em];
+ }
 
-  .project-info-seperator {
-    @apply w-full flex flex-col gap-2 pb-3 border-b border-border;
-  }
+ .project-info-seperator {
+  @apply w-full flex flex-col gap-2 pb-3 border-b border-border;
+ }
 
-  .has-grain::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300%;
-    height: 300%;
-    pointer-events: none;
-    background-image: url("https://bedes.qui.gg/images/framernoise.png");
-    opacity: 0.08;
-    z-index: 30;
-    animation:
-      fadeInGrain 2s ease forwards,
-      animateGrain 8s steps(10) infinite;
-  }
+ .has-grain::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  pointer-events: none;
+  background-image: url("https://bedes.qui.gg/images/framernoise.png");
+  opacity: 0.08;
+  z-index: 30;
+  animation:
+   fadeInGrain 2s ease forwards,
+   animateGrain 8s steps(10) infinite;
+ }
 
-  @keyframes fadeInGrain {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0.08;
-    }
+ @keyframes fadeInGrain {
+  0% {
+   opacity: 0;
   }
+  100% {
+   opacity: 0.08;
+  }
+ }
 
-  @keyframes animateGrain {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
-    10% {
-      transform: translate(-5%, -10%);
-    }
-    20% {
-      transform: translate(-15%, -20%);
-    }
-    30% {
-      transform: translate(-5%, -10%);
-    }
-    40% {
-      transform: translate(-15%, -20%);
-    }
-    50% {
-      transform: translate(-5%, -10%);
-    }
-    60% {
-      transform: translate(-15%, -20%);
-    }
-    70% {
-      transform: translate(-5%, -10%);
-    }
-    80% {
-      transform: translate(-15%, -20%);
-    }
-    90% {
-      transform: translate(-5%, -10%);
-    }
+ @keyframes animateGrain {
+  0%,
+  100% {
+   transform: translate(0, 0);
   }
+  10% {
+   transform: translate(-5%, -10%);
+  }
+  20% {
+   transform: translate(-15%, -20%);
+  }
+  30% {
+   transform: translate(-5%, -10%);
+  }
+  40% {
+   transform: translate(-15%, -20%);
+  }
+  50% {
+   transform: translate(-5%, -10%);
+  }
+  60% {
+   transform: translate(-15%, -20%);
+  }
+  70% {
+   transform: translate(-5%, -10%);
+  }
+  80% {
+   transform: translate(-15%, -20%);
+  }
+  90% {
+   transform: translate(-5%, -10%);
+  }
+ }
 }
 
 @layer utilities {
-  .hero-bg {
-    background: radial-gradient(
-      600px circle at 20% 15%,
-      rgba(255, 255, 255, 0.06),
-      transparent 40%
-    );
-  }
+ .hero-bg {
+  background: radial-gradient(
+   600px circle at 20% 15%,
+   rgba(255, 255, 255, 0.06),
+   transparent 40%
+  );
+ }
 
-  @media (min-width: 768px) {
-    .hero-bg {
-      background: radial-gradient(
-        800px circle at 20% 15%,
-        rgba(255, 255, 255, 0.08),
-        transparent 45%
-      );
-    }
+ @media (min-width: 768px) {
+  .hero-bg {
+   background: radial-gradient(
+    800px circle at 20% 15%,
+    rgba(255, 255, 255, 0.08),
+    transparent 45%
+   );
   }
+ }
 }

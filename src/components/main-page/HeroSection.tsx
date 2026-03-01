@@ -4,103 +4,87 @@ import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import useMotionPresets from "@/hooks/useMotionPresets";
 
 type Socials = {
-  link: string;
-  text: string;
+ link: string;
+ text: string;
 };
 
 const socials: Socials[] = [
-  { link: "https://x.com/Charmingdc01", text: "Say hi on 𝕏" },
-  {
-    link: "https://medium.com/@adebayomuis",
-    text: "Read my Articles"
-  },
-  {
-    link: "https://github.com/Charmingdc",
-    text: "Connect on Github"
-  }
+ { link: "https://x.com/Charmingdc01", text: "Say hi on 𝕏" },
+ { link: "https://medium.com/@adebayomuis", text: "Read my Articles" },
+ { link: "https://github.com/Charmingdc", text: "Connect on Github" }
 ];
 
-const containerVariants = {
-  hide: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1
-    }
-  }
-};
-
 const HeroSection = () => {
-  const motionPresets = useMotionPresets();
-  const itemVariants = motionPresets.fadeInUp;
+ const motionPresets = useMotionPresets();
+ const itemVariants = motionPresets.fadeInUp;
 
-  return (
-    <motion.section
-      id="hero-section"
-      initial="hide"
-      whileInView="show"
-      variants={containerVariants}
-      viewport={{ once: true, amount: 0.2 }}
-      className="relative w-full min-h-[75vh] flex flex-col gap-6 pt-[6rem] pb-24 px-8 bg-[radial-gradient(900px_circle_at_20%_20%,rgba(140,150,156,0.06),transparent_50%)] md:min-h-fit md:pb-20"
-    >
-      <div className="relative w-48 h-48 flex items-center">
-        <motion.img
-          variants={itemVariants}
-          src="/illustrations/my-x-dp.jpeg"
-          className="w-36 h-36 object-cover bg-background border-4 border-border rounded-full"
-          alt="Charmingdc Avatar"
-        ></motion.img>
+ return (
+  <motion.section
+   id="hero-section"
+   initial="hide"
+   whileInView="show"
+   variants={{
+    hide: {},
+    show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+   }}
+   viewport={{ once: true, amount: 0.2 }}
+   className="relative w-full min-h-screen flex flex-col items-center pt-20 pb-14 md:pb-0 px-6 bg-background text-foreground transition-colors duration-300"
+  >
+   <motion.h1
+    variants={itemVariants}
+    className="font-black uppercase text-center text-[15vw] md:text-[6.5rem] leading-[0.82] tracking-[-0.07em] mb-12"
+   >
+    Frontend
+    <br />
+    Software
+    <br />
+    Engineer<span className="text-[0.4em] align-top ml-1 text-muted">©</span>
+   </motion.h1>
 
-        <span className="absolute right-[32%] bottom-[20%] w-4 h-4 bg-green-400 rounded-full shadow-[0_0_8px_2px_rgba(34,197,94,0.7)] animate-pulse"></span>
-      </div>
+   <motion.div
+    variants={itemVariants}
+    className="relative w-64 md:w-80 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl border-[5px] border-border mb-16"
+   >
+    <img
+     src="/illustrations/my-x-dp.jpeg"
+     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105"
+     alt="Charmingdc Avatar"
+    />
+   </motion.div>
 
-      <motion.h1
-        variants={itemVariants}
-        className="w-[80%] tracking-tight text-2xl font-black leading-[1.05] md:text-3xl"
-      >
-        Hi 👋🏼,{" "}
-        <span className="underline underline-offset-2 decoration-1 decoration-soft decoration-wavy">
-          I'm Adebayo Muis.
-        </span>
-      </motion.h1>
+   <motion.div
+    variants={itemVariants}
+    className="flex flex-wrap justify-center gap-3 max-w-2xl"
+   >
+    {socials.map((social, index) => (
+     <a
+      key={index}
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center gap-2 px-5 py-2.5 bg-card backdrop-blur-sm border border-border rounded-full hover:bg-foreground hover:text-background transition-all duration-300 ease-out"
+     >
+      <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-card-foreground group-hover:text-background transition-colors">
+       {social.text}
+      </span>
+      <HugeiconsIcon
+       icon={LinkSquare01Icon}
+       size={14}
+       className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+      />
+     </a>
+    ))}
+   </motion.div>
 
-      <motion.h2
-        variants={itemVariants}
-        className="text-soft text-lg flex items-center gap-2 md:text-xl"
-      >
-        Frontend Software Engineer
-        <span className="animate-pulse text-accent -ml-1">|</span>
-      </motion.h2>
-
-      <motion.p
-        variants={itemVariants}
-        className="max-w-[85%] text-muted leading-relaxed -mt-5"
-      >
-        I build clear, accessible, and production-ready web interfaces - with
-        thoughtful backend integration.
-      </motion.p>
-
-      <motion.article
-        variants={itemVariants}
-        className="flex flex-wrap gap-y-2 gap-x-3 mt-4 text-soft text-sm"
-      >
-        {socials.map(social => (
-          <motion.a
-            key={social.text}
-            href={social.link}
-            target="_blank"
-            rel="noreferrer"
-            variants={itemVariants}
-            className="w-fit flex items-center gap-2 py-[0.3rem] border-b border-soft transition-all duration-200 hover:border-accent"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {social.text} <HugeiconsIcon icon={LinkSquare01Icon} size={17} />
-          </motion.a>
-        ))}
-      </motion.article>
-    </motion.section>
-  );
+   <motion.div
+    variants={itemVariants}
+    className="mt-20 flex justify-between w-full max-w-5xl text-[10px] font-bold uppercase tracking-tighter text-muted px-4"
+   >
+    <p>OSUN, NG — {new Date().getFullYear()}</p>
+    <p>Status: Available</p>
+   </motion.div>
+  </motion.section>
+ );
 };
 
 export default HeroSection;
