@@ -22,7 +22,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
    whileInView="show"
    variants={fadeInUp}
    viewport={{ once: animateOnce, amount: 0.2 }}
-   className="group w-full flex flex-col gap-8 p-5 bg-card border border-border rounded-[2rem] transition-all duration-500 hover:border-foreground/20 hover:shadow-2xl hover:shadow-black/50"
+   className="group w-full flex flex-col gap-8 p-5 bg-card border border-border rounded-[2rem] transition-all duration-500 transform hover:border-foreground/20"
   >
    <Link
     to={`/projects/${project.name.toLowerCase()}`}

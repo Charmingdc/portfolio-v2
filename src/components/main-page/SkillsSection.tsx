@@ -44,10 +44,9 @@ const SkillsSection = () => {
       experiences.
      </motion.p>
 
-     {/* THE MONOLITHIC GRID: Single rounded container with internal dividers */}
      <motion.div
       variants={fadeInUp}
-      className="grid grid-cols-2 sm:grid-cols-3 overflow-hidden rounded-[2.5rem] border border-border bg-card/10"
+      className="grid grid-cols-2 sm:grid-cols-3 overflow-hidden rounded-[2.5rem] border border-border bg-card/10 shadow-sm"
      >
       {tools.map(tool => (
        <div

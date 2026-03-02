@@ -6,27 +6,27 @@
 
 @layer base {
  :root {
-  --background: 10 10 10;
-  --foreground: 180 180 180;
-  --card: 16 16 16;
-  --border: 28 28 28;
-  --card-foreground: 150 150 150;
-  --muted: 80 80 80;
-  --soft: 110 110 110;
-  --accent: 255 255 255;
-  --overlay: 0 0 0;
+  --background: 15 16 18;
+  --foreground: 242 242 245;
+  --card: 20 21 24;
+  --border: 30 32 38;
+  --card-foreground: 158 162 170;
+  --muted: 95 100 115;
+  --soft: 125 130 145;
+  --accent: 37 99 235;
+  --overlay: 12 13 15;
  }
 
  @media (prefers-color-scheme: light) {
   :root {
-   --background: 245 245 245;
-   --foreground: 40 40 40;
+   --background: 248 249 252;
+   --foreground: 30 32 40;
    --card: 255 255 255;
-   --border: 220 220 220;
-   --card-foreground: 60 60 60;
-   --muted: 130 130 130;
-   --soft: 150 150 150;
-   --accent: 0 0 0;
+   --border: 220 224 235;
+   --card-foreground: 70 75 90;
+   --muted: 135 140 160;
+   --soft: 155 160 180;
+   --accent: 25 85 210;
    --overlay: 255 255 255;
   }
  }
@@ -42,6 +42,11 @@
  :focus-visible {
   outline: 1px solid rgb(var(--accent));
   outline-offset: 1px;
+ }
+
+ ::selection,
+ -moz::selection {
+  background-color: rgba(var(--accent) / 0.4);
  }
 
  body {

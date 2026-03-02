@@ -4,7 +4,7 @@ import type { Variants, Easing } from "motion/react";
 const useMotionPresets = () => {
  const reduceMotion = useReducedMotion();
 
- const duration = reduceMotion ? 0.2 : 0.4;
+ const duration = reduceMotion ? 0.2 : 0.6;
  const ease: Easing = reduceMotion ? [0, 0, 1, 1] : [0.42, 0, 0.58, 1];
 
  const containerAnim: Variants = {
@@ -18,17 +18,17 @@ const useMotionPresets = () => {
  };
 
  const fadeInUp: Variants = {
-  hide: { opacity: 0, y: reduceMotion ? 0 : "1rem" },
+  hide: { opacity: 0, y: reduceMotion ? 0 : "1.5rem" },
   show: { opacity: 1, y: 0, transition: { duration, ease } }
  };
 
  const fadeInLeft: Variants = {
-  hide: { opacity: 0, x: reduceMotion ? 0 : "-1rem" },
+  hide: { opacity: 0, x: reduceMotion ? 0 : "-1.5rem" },
   show: { opacity: 1, x: 0, transition: { duration, ease } }
  };
 
  const fadeInRight: Variants = {
-  hide: { opacity: 0, x: reduceMotion ? 0 : "1rem" },
+  hide: { opacity: 0, x: reduceMotion ? 0 : "1.5rem" },
   show: { opacity: 1, x: 0, transition: { duration, ease } }
  };
 

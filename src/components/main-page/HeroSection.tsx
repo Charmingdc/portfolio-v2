@@ -43,7 +43,7 @@ const HeroSection = () => {
 
    <motion.div
     variants={itemVariants}
-    className="relative w-64 md:w-80 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl border-[5px] border-border mb-16"
+    className="relative w-60 md:w-80 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-lg border-[4px] border-border mb-16"
    >
     <img
      src="/illustrations/my-x-dp.jpeg"
@@ -62,7 +62,7 @@ const HeroSection = () => {
       href={social.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-2 px-5 py-2.5 bg-card backdrop-blur-sm border border-border rounded-full hover:bg-foreground hover:text-background transition-all duration-300 ease-out"
+      className="group flex items-center gap-2 px-5 py-2.5 bg-card backdrop-blur-sm border border-border rounded-full hover:bg-accent hover:text-background transition-all duration-300 ease-out"
      >
       <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-card-foreground group-hover:text-background transition-colors">
        {social.text}
@@ -80,8 +80,8 @@ const HeroSection = () => {
     variants={itemVariants}
     className="mt-20 flex justify-between w-full max-w-5xl text-[10px] font-bold uppercase tracking-tighter text-muted px-4"
    >
-    <p>OSUN, NG — {new Date().getFullYear()}</p>
-    <p>Status: Available</p>
+    <p> Ede, Osun, Nigeria — {new Date().getFullYear()}</p>
+    <p>Available for new roles</p>
    </motion.div>
   </motion.section>
  );
