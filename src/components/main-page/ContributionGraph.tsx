@@ -31,7 +31,7 @@ const ContributionGraph = () => {
     <div className="relative">
      <button
       onClick={() => setIsDropDownOpen(prev => !prev)}
-      className="flex items-center gap-2 px-4 py-1.5 bg-background border border-border rounded-full text-[11px] font-bold uppercase tracking-wider hover:border-foreground transition-colors"
+      className="flex items-center gap-2 px-4 py-1.5 bg-background border border-border rounded-full text-[11px] font-bold uppercase tracking-wider  hover:border-foreground transition-colors"
      >
       {selectedYear}
       <HugeiconsIcon

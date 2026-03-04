@@ -5,17 +5,14 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { Download01Icon } from "@hugeicons/core-free-icons";
 
 const AboutSection = () => {
- const { fadeInUp } = useMotionPresets();
+ const { fadeInUp, containerAnim } = useMotionPresets();
 
  return (
   <motion.section
    id="about-section"
    initial="hide"
    whileInView="show"
-   variants={{
-    hide: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.15 } }
-   }}
+   variants={containerAnim}
    viewport={{ once: true, amount: 0.1 }}
    className="w-full max-w-7xl mx-auto py-24 px-6 md:px-12 bg-background"
   >
@@ -71,9 +68,14 @@ const AboutSection = () => {
          Background
         </span>
         <p className="text-sm leading-relaxed text-card-foreground font-normal">
-         I’m Adebayo Muis, a Nigeria-based frontend software engineer with 3+
-         years of experience building real-world web applications, from small
-         tools to full product interfaces.
+         I’m{" "}
+         <span className="font-bold underline underline-offset-2 decoration-1 decoration-wavy decoration-accent">
+          {" "}
+          Adebayo Muis{" "}
+         </span>
+         , a Nigeria-based frontend software engineer with 3+ years of
+         experience building real-world web applications, from small tools to
+         full product interfaces.
         </p>
        </div>
 
@@ -99,7 +101,7 @@ const AboutSection = () => {
         Github_Activity_v1.0
        </span>
       </div>
-      <div className="p-8 bg-card border border-border rounded-[2.5rem] overflow-hidden shadow-inner shadow-black/20">
+      <div className="p-8 bg-card border border-border rounded-[2.5rem] overflow-hidden shadow-inner shadow-background/20 transform origin-top-left rotate-3 transition-all duration-200 hover:rotate-0">
        <ContributionGraph />
       </div>
      </motion.div>

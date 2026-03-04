@@ -15,18 +15,14 @@ const socials: Socials[] = [
 ];
 
 const HeroSection = () => {
- const motionPresets = useMotionPresets();
- const itemVariants = motionPresets.fadeInUp;
+ const { fadeInUp: itemVariants, containerAnim } = useMotionPresets();
 
  return (
   <motion.section
    id="hero-section"
    initial="hide"
    whileInView="show"
-   variants={{
-    hide: {},
-    show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
-   }}
+   variants={containerAnim}
    viewport={{ once: true, amount: 0.2 }}
    className="relative w-full min-h-screen flex flex-col items-center pt-20 pb-14 md:pb-0 px-6 bg-background text-foreground transition-colors duration-300"
   >
@@ -34,16 +30,25 @@ const HeroSection = () => {
     variants={itemVariants}
     className="font-black uppercase text-center text-[15vw] md:text-[6.5rem] leading-[0.82] tracking-[-0.07em] mb-12"
    >
-    Frontend
-    <br />
-    Software
-    <br />
-    Engineer<span className="text-[0.4em] align-top ml-1 text-muted">©</span>
+    <span className="relative inline-block bg-accent/30">
+     <span className="absolute -left-[2px] top-0 w-[2px] h-[0.82em] bg-accent">
+      <span className="absolute -top-[4px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-accent rounded-full"></span>
+     </span>
+     Frontend
+     <br />
+     Software
+     <br />
+     Engineer
+     <span className="text-[0.4em] align-top ml-1 text-soft">©</span>
+     <span className="absolute -right-[2px] bottom-0 w-[2px] h-[0.82em] bg-accent">
+      <span className="absolute -bottom-[4px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-accent rounded-full"></span>
+     </span>
+    </span>
    </motion.h1>
 
    <motion.div
     variants={itemVariants}
-    className="relative w-60 md:w-80 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-lg border-[4px] border-border mb-16"
+    className="relative w-56 md:w-80 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-md border-[4px] border-border mb-16"
    >
     <img
      src="/illustrations/my-x-dp.jpeg"
@@ -81,7 +86,13 @@ const HeroSection = () => {
     className="mt-20 flex justify-between w-full max-w-5xl text-[10px] font-bold uppercase tracking-tighter text-muted px-4"
    >
     <p> Ede, Osun, Nigeria — {new Date().getFullYear()}</p>
-    <p>Available for new roles</p>
+    <p className="flex items-center gap-2">
+     Available for new roles{" "}
+     <span className="relative flex h-2 w-2">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_8px_#4ade80]"></span>
+     </span>
+    </p>
    </motion.div>
   </motion.section>
  );
