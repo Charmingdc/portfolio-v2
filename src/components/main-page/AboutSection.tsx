@@ -58,8 +58,9 @@ const AboutSection = () => {
     <div className="lg:col-span-8 space-y-16">
      <motion.div variants={fadeInUp} className="space-y-10">
       <p className="text-xl md:text-2xl font-normal leading-relaxed tracking-tight text-foreground/90 max-w-2xl">
-       I like to craft solid and scalable frontend products with great user
-       experiences.
+       I like to craft <span className="highlighted-text">solid</span> and{" "}
+       <span className="highlighted-text">scalable</span> frontend products with
+       great user experiences.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-border/60">
@@ -101,7 +102,7 @@ const AboutSection = () => {
         Github_Activity_v1.0
        </span>
       </div>
-      <div className="p-8 bg-card border border-border rounded-[2.5rem] overflow-hidden shadow-inner shadow-background/20 transform origin-top-left rotate-3 transition-all duration-200 hover:rotate-0">
+      <div className="p-8 bg-card border border-border rounded-[2.5rem] overflow-hidden shadow-inner shadow-background/20 transform origin-top-left rotate-3 ml-1 transition-all duration-200 hover:rotate-0">
        <ContributionGraph />
       </div>
      </motion.div>

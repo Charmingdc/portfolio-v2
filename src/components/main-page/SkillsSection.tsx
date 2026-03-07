@@ -40,8 +40,8 @@ const SkillsSection = () => {
       variants={fadeInUp}
       className="text-xl md:text-2xl font-normal leading-tight tracking-tight text-foreground/80 max-w-xl"
      >
-      Modern technologies and frameworks I use to build performant digital
-      experiences.
+      Modern technologies and frameworks I use to build{" "}
+      <span className="highlighted-text">performant</span> digital experiences.
      </motion.p>
 
      <motion.div

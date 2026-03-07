@@ -34,9 +34,9 @@ const HeroSection = () => {
      <span className="absolute -left-[2px] top-0 w-[2px] h-[0.82em] bg-accent">
       <span className="absolute -top-[4px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-accent rounded-full"></span>
      </span>
-     Frontend
+     Creative
      <br />
-     Software
+     Frontend
      <br />
      Engineer
      <span className="text-[0.4em] align-top ml-1 text-soft">©</span>
@@ -83,7 +83,7 @@ const HeroSection = () => {
 
    <motion.div
     variants={itemVariants}
-    className="mt-20 flex justify-between w-full max-w-5xl text-[10px] font-bold uppercase tracking-tighter text-muted px-4"
+    className="mt-20 flex justify-between w-full max-w-5xl text-[10px] font-bold uppercase tracking-tighter text-muted px-1"
    >
     <p> Ede, Osun, Nigeria — {new Date().getFullYear()}</p>
     <p className="flex items-center gap-2">
