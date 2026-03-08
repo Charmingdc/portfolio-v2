@@ -1,113 +1,97 @@
-# Adebayo Muis - Creative Frontend Portfolio 🌟
+# Charmingdc Portfolio: Resilient Frontend Engineering
 
-## Overview
-This repository hosts the official personal portfolio website for Adebayo Muis, a passionate frontend software engineer. Crafted with modern web technologies, this platform elegantly showcases a collection of innovative projects, technical skills, and open-source contributions, reflecting a dedication to building high-performance, user-centric web experiences.
+This project is a dynamic and meticulously crafted personal portfolio website for Adebayo Muis, a creative frontend developer. Built with TypeScript and React, it showcases a collection of innovative projects, highlighting a commitment to building high-performance, scalable, and visually appealing web experiences that leverage modern animation libraries and responsive design principles.
 
 ## Features
-- **Project Showcase**: Engaging display of diverse projects, each with detailed case studies, technology breakdowns, and live demos.
-- **Interactive Skillset Display**: A dedicated section highlighting key technologies and frameworks mastered.
-- **Dynamic GitHub Contribution Graph**: Visual representation of open-source activity, powered by `react-github-calendar`.
-- **Responsive Design**: Flawless user experience across all devices, from desktops to mobile phones, achieved with Tailwind CSS.
-- **Smooth Animations**: Enhanced user interface with fluid and performant animations using Motion.
-- **SEO Optimization**: Configured with `robots.txt`, `sitemap.xml`, and comprehensive meta tags for improved discoverability.
-- **Direct Contact Options**: Multiple avenues for connection, including email, phone, and social media.
-- **Skip to Main Content**: Accessibility-focused feature for keyboard navigation.
 
-## Getting Started
-
-### Installation
-To get a local copy of the project up and running, follow these steps:
-
-1.  **Clone the Repository**:
-    ```bash
-    git clone git@github.com:Charmingdc/portfolio-v2.git
-    cd portfolio-v2
-    ```
-
-2.  **Install Dependencies**:
-    Navigate to the project directory and install the required npm packages.
-    ```bash
-    npm install
-    # or using pnpm:
-    # pnpm install
-    # or using yarn:
-    # yarn install
-    ```
-
-### Environment Variables
-This project does not currently require any specific environment variables for local development or production. All configurations are handled directly within the codebase.
-
-## Usage
-
-Once the dependencies are installed, you can run the development server or build the project for production:
-
-### Development Server
-To start the local development server, which includes hot-reloading for a smooth development workflow:
-```bash
-npm run dev
-# or using pnpm:
-# pnpm dev
-# or using yarn:
-# yarn dev
-```
-The application will typically be accessible at `http://localhost:5173` (or another port if `5173` is in use).
-
-### Building for Production
-To create an optimized production build of the application:
-```bash
-npm run build
-# or using pnpm:
-# pnpm build
-# or using yarn:
-# yarn build
-```
-This command will compile and minify all assets into the `dist/` directory, ready for deployment.
-
-### Viewing the Production Build Locally
-You can preview the production build locally using Vite's preview command:
-```bash
-npm run preview
-# or using pnpm:
-# pnpm preview
-# or using yarn:
-# yarn preview
-```
-This will serve the `dist/` folder, allowing you to test the optimized production version.
+-   **Dynamic Project Showcase**: Presents a comprehensive portfolio of projects with detailed case studies, technical challenges, and solutions.
+-   **Interactive Animations**: Utilizes the `motion` library for fluid, physics-based UI transitions and engaging user experiences, with support for reduced motion preferences.
+-   **Responsive & Adaptive Design**: Implements a mobile-first, responsive design using Tailwind CSS, ensuring optimal viewing across all devices and screen sizes.
+-   **SEO Optimization**: Configured with essential meta tags, `robots.txt`, and `sitemap.xml` for improved search engine visibility and discoverability.
+-   **Type-Safe Development**: Developed entirely in TypeScript to enhance code quality, maintainability, and reduce runtime errors.
+-   **GitHub Contribution Integration**: Features a dynamic GitHub contribution graph to visualize open-source activity and engagement.
+-   **Customizable Theme**: Includes a flexible Tailwind CSS configuration with custom color palettes and typography, supporting dark mode preferences.
+-   **Efficient Routing**: Leverages `react-router-dom` for seamless client-side navigation between portfolio sections and individual project pages, including hash-based scrolling.
 
 ## Technologies Used
 
-| Technology       | Description                                                 | Link                                                         |
-| :--------------- | :---------------------------------------------------------- | :----------------------------------------------------------- |
-| **TypeScript**   | Statically typed superset of JavaScript.                    | [TypeScript](https://www.typescriptlang.org/)                |
-| **React**        | A JavaScript library for building user interfaces.          | [React](https://react.dev/)                                  |
-| **Vite**         | Next-generation frontend tooling.                           | [Vite](https://vitejs.dev/)                                  |
-| **Tailwind CSS** | A utility-first CSS framework for rapid UI development.     | [Tailwind CSS](https://tailwindcss.com/)                     |
-| **Motion**       | Animation library for React.                                | [Motion](https://www.framer.com/motion/)                     |
-| **React Router** | Declarative routing for React applications.                 | [React Router](https://reactrouter.com/en/main)              |
-| **Hugeicons**    | Modern, customizable icon library.                          | [Hugeicons](https://hugeicons.com/)                          |
-| **Romanify**     | Lightweight library for converting numbers to Roman numerals. | [Romanify](https://www.npmjs.com/package/@charmingdc/romanify) |
-| **ESLint**       | Pluggable JavaScript linter.                                | [ESLint](https://eslint.org/)                                |
-| **PostCSS**      | Tool for transforming CSS with JavaScript plugins.          | [PostCSS](https://postcss.org/)                              |
+| Technology                  | Purpose                                              |
+| :-------------------------- | :--------------------------------------------------- |
+| **React**                   | Frontend JavaScript library for building user interfaces |
+| **TypeScript**              | Superset of JavaScript for type-safe development     |
+| **Vite**                    | Next-generation frontend tooling for fast development |
+| **Tailwind CSS**            | Utility-first CSS framework for rapid styling        |
+| **Motion**                  | Lightweight animation library for React              |
+| **React Router DOM**        | Declarative routing for React applications           |
+| **ESLint**                  | Static code analysis for identifying code issues     |
+| **PostCSS**                 | Tool for transforming CSS with JavaScript plugins    |
+| **Autoprefixer**            | PostCSS plugin to parse CSS and add vendor prefixes  |
+| **Hugeicons**               | Modern icon library for UI elements                  |
+| **React GitHub Calendar**   | Component to display GitHub contributions            |
+| **Vercel**                  | Platform for seamless frontend deployment            |
+
+## Getting Started
+
+Follow these steps to set up the project locally.
+
+### Installation
+
+To get a local copy up and running, follow these simple steps:
+
+-   **Clone the Repository**:
+
+    ```bash
+    git clone https://github.com/Charmingdc/portfolio-v2.git
+    ```
+
+-   **Navigate to the Project Directory**:
+
+    ```bash
+    cd portfolio-v2
+    ```
+
+-   **Install Dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+### Environment Variables
+
+No specific environment variables are required for local development.
+
+## Usage
+
+Once the development server is running, navigate to `http://localhost:5173` (or the port indicated in your console) in your web browser. Explore the various sections of the portfolio:
+
+-   The **Hero Section** introduces Adebayo Muis's core philosophy and key social links.
+-   The **About Section** provides insights into the technical journey and philosophy, including a dynamic GitHub contribution graph.
+-   The **Skills Section** lists the key technologies and tools utilized in development.
+-   The **Project Section** showcases a curated selection of projects with links to detailed case studies.
+-   The **Contact Section** provides various ways to connect for collaboration or inquiries, including email, phone, and social media.
+
+You can also:
+
+-   Navigate directly to `/projects` to view the full archive of projects.
+-   Access a dedicated project overview page for any project by navigating to `/projects/:name`, where `:name` is the project's lowercase name (e.g., `/projects/emojinary`).
+
+For production builds, use `npm run build` to compile the optimized assets.
 
 ## Author Info
 
-**Adebayo Muis**
-A passionate Frontend Software Engineer focused on crafting visually appealing, highly interactive, and scalable web applications. Dedicated to continuous learning and contributing to the open-source community.
-
-*   **LinkedIn**: [adebayomuis](https://linkedin.com/in/adebayomuis)
-*   **X (formerly Twitter)**: [@Charmingdc01](https://x.com/Charmingdc01)
-*   **GitHub**: [@Charmingdc](https://github.com/Charmingdc)
-*   **Medium**: [@adebayomuis](https://medium.com/@adebayomuis)
-
-© 2024 Adebayo Muis
+-   **Name**: Adebayo Muis
+-   **GitHub**: [@Charmingdc](https://github.com/Charmingdc)
+-   **LinkedIn**: [Adebayo Muis](https://linkedin.com/in/adebayomuis)
+-   **X (formerly Twitter)**: [@Charmingdc01](https://x.com/Charmingdc01)
+-   **Medium**: [@adebayomuis](https://medium.com/@adebayomuis)
 
 ---
 
-[![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://adebayomuis.is-a.dev/)
-[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Motion](https://img.shields.io/badge/Motion-000000?style=flat-square&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-7.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Motion](https://img.shields.io/badge/Motion-12.x-000000?logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Deployed with Vercel](https://img.shields.io/badge/Deployed_with-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)
 
 [![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
