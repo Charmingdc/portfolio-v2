@@ -1,6 +1,4 @@
 import { motion } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import useMotionPresets from "@/hooks/useMotionPresets";
 
 type Socials = {
@@ -9,9 +7,9 @@ type Socials = {
 };
 
 const socials: Socials[] = [
- { link: "https://x.com/Charmingdc01", text: "Say hi on 𝕏" },
- { link: "https://medium.com/@adebayomuis", text: "Read my Articles" },
- { link: "https://github.com/Charmingdc", text: "Connect on Github" }
+ { link: "https://x.com/Charmingdc01", text: "twitter" },
+ { link: "https://medium.com/@adebayomuis", text: "articles" },
+ { link: "https://github.com/Charmingdc", text: "github" }
 ];
 
 const HeroSection = () => {
@@ -21,78 +19,48 @@ const HeroSection = () => {
   <motion.section
    id="hero-section"
    initial="hide"
-   whileInView="show"
+   animate="show"
    variants={containerAnim}
-   viewport={{ once: true, amount: 0.2 }}
-   className="relative w-full min-h-screen flex flex-col items-center pt-20 pb-14 md:pb-0 px-6 bg-background text-foreground transition-colors duration-300"
+   className="relative w-full min-h-screen flex flex-col justify-center px-6 md:px-24 bg-background transition-colors duration-500 -mt-4"
   >
-   <motion.h1
-    variants={itemVariants}
-    className="font-black uppercase text-center text-[15vw] md:text-[6.5rem] leading-[0.82] tracking-[-0.07em] mb-12"
-   >
-    <span className="relative inline-block bg-accent/30">
-     <span className="absolute -left-[2px] top-0 w-[2px] h-[0.82em] bg-accent">
-      <span className="absolute -top-[4px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-accent rounded-full"></span>
+   <div className="max-w-4xl space-y-12">
+    <motion.div variants={itemVariants} className="flex items-center gap-1">
+     <span className="text-[10px] font-medium text-muted/40 lowercase tracking-[0.3em]">
+      short intro ↳
      </span>
-     Creative
-     <br />
-     Frontend
-     <br />
-     Engineer
-     <span className="text-[0.4em] align-top ml-1 text-soft">©</span>
-     <span className="absolute -right-[2px] bottom-0 w-[2px] h-[0.82em] bg-accent">
-      <span className="absolute -bottom-[4px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] bg-accent rounded-full"></span>
-     </span>
-    </span>
-   </motion.h1>
+     <div className="self-end h-[1px] w-4 bg-border/40" />
+    </motion.div>
 
-   <motion.div
-    variants={itemVariants}
-    className="relative w-56 md:w-80 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-md border-[4px] border-border mb-16"
-   >
-    <img
-     src="/illustrations/my-x-dp.jpeg"
-     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105"
-     alt="Charmingdc Avatar"
-    />
-   </motion.div>
+    <motion.div variants={itemVariants}>
+     <h1 className="w-[85%] text-3xl md:text-6xl font-light leading-tight tracking-tighter text-foreground lowercase">
+      i build <span className="highlighted-text">resilient</span> frontend
+      systems that stay fast and predictable, turning complex data into fluid,
+      high-quality experiences that never break under pressure.
+     </h1>
+    </motion.div>
 
-   <motion.div
-    variants={itemVariants}
-    className="flex flex-wrap justify-center gap-3 max-w-2xl"
-   >
-    {socials.map((social, index) => (
-     <a
-      key={index}
-      href={social.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex items-center gap-2 px-5 py-2.5 bg-card backdrop-blur-sm border border-border rounded-full hover:bg-accent hover:text-background transition-all duration-300 ease-out"
-     >
-      <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-card-foreground group-hover:text-background transition-colors">
+    <motion.div variants={itemVariants} className="flex gap-8 pt-4">
+     {socials.map((social, index) => (
+      <a
+       key={index}
+       href={social.link}
+       target="_blank"
+       rel="noopener noreferrer"
+       className="text-xs font-medium text-muted/40 hover:text-accent transition-all duration-300 lowercase"
+      >
        {social.text}
-      </span>
-      <HugeiconsIcon
-       icon={LinkSquare01Icon}
-       size={14}
-       className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
-      />
-     </a>
-    ))}
-   </motion.div>
+      </a>
+     ))}
+    </motion.div>
+   </div>
 
    <motion.div
     variants={itemVariants}
-    className="mt-20 flex justify-between w-full max-w-5xl text-[10px] font-bold uppercase tracking-tighter text-muted px-1"
+    className="absolute bottom-14 left-6 md:left-24 flex items-center gap-4 text-[10px] font-medium text-muted/20 lowercase tracking-widest"
    >
-    <p> Ede, Osun, Nigeria — {new Date().getFullYear()}</p>
-    <p className="flex items-center gap-2">
-     Available for new roles{" "}
-     <span className="relative flex h-2 w-2">
-      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_8px_#4ade80]"></span>
-     </span>
-    </p>
+    <span>ede, osun — ng</span>
+    <span className="w-1 h-1 rounded-full bg-border/40" />
+    <span>{new Date().getFullYear()}</span>
    </motion.div>
   </motion.section>
  );

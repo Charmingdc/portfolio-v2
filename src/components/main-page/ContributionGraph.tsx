@@ -22,32 +22,32 @@ const ContributionGraph = () => {
  }, [currentYear]);
 
  return (
-  <div className="relative w-full flex flex-col gap-6">
+  <div className="relative w-full flex flex-col gap-8">
    <div className="w-full flex items-center justify-between">
-    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted">
-     Github Engine Activity
+    <span className="text-[11px] font-medium lowercase text-muted/40 tracking-tight">
+     github activity record
     </span>
 
     <div className="relative">
      <button
       onClick={() => setIsDropDownOpen(prev => !prev)}
-      className="flex items-center gap-2 px-4 py-1.5 bg-background border border-border rounded-full text-[11px] font-bold uppercase tracking-wider  hover:border-foreground transition-colors"
+      className="flex items-center gap-2 text-sm font-medium lowercase text-soft hover:text-accent transition-colors"
      >
       {selectedYear}
       <HugeiconsIcon
        icon={isDropDownOpen ? ArrowUp01Icon : ArrowDown01Icon}
        size={12}
-       className="text-soft"
+       className="opacity-40"
       />
      </button>
 
      <AnimatePresence>
       {isDropDownOpen && (
        <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 4 }}
-        exit={{ opacity: 0, y: -10 }}
-        className="absolute right-0 top-full z-50 min-w-[100px] bg-card border border-border rounded-2xl p-2 shadow-2xl backdrop-blur-md"
+        initial={{ opacity: 0, y: -5 }}
+        animate={{ opacity: 1, y: 8 }}
+        exit={{ opacity: 0, y: -5 }}
+        className="absolute right-0 top-full z-50 min-w-[80px] bg-background border border-border/50 rounded-xl p-1 shadow-sm backdrop-blur-xl"
        >
         {years
          .sort((a, b) => b - a)
@@ -58,7 +58,7 @@ const ContributionGraph = () => {
             setSelectedYear(year);
             setIsDropDownOpen(false);
            }}
-           className="w-full text-left px-4 py-2 text-[11px] font-bold uppercase rounded-xl hover:bg-foreground hover:text-background transition-all"
+           className="w-full text-left px-3 py-1.5 text-xs lowercase rounded-lg hover:bg-accent/10 hover:text-accent transition-all"
           >
            {year}
           </button>
@@ -71,17 +71,19 @@ const ContributionGraph = () => {
 
    <motion.div
     variants={fadeIn}
-    className="w-full overflow-hidden cursor-crosshair"
+    className="w-full overflow-x-auto no-scrollbar cursor-crosshair"
     onClick={() => setIsDropDownOpen(false)}
    >
-    <GitHubCalendar
-     username="Charmingdc"
-     year={selectedYear}
-     fontSize={12}
-     blockSize={12}
-     blockMargin={4}
-     errorMessage="Data sync failed."
-    />
+    <div className="min-w-[700px] md:min-w-full">
+     <GitHubCalendar
+      username="Charmingdc"
+      year={selectedYear}
+      fontSize={12}
+      blockSize={11}
+      blockMargin={4}
+      errorMessage="data sync failed."
+     />
+    </div>
    </motion.div>
   </div>
  );

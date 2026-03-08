@@ -19,64 +19,64 @@ const ProjectsList = () => {
     hide: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.1 } }
    }}
-   className="w-full bg-background min-h-screen pt-20 pb-24 overflow-hidden"
+   className="w-full bg-background min-h-screen pt-16 pb-32 overflow-x-hidden"
   >
-   <div className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
+   <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24 mb-20">
     <motion.button
      variants={fadeInUp}
-     onClick={() => navigate(-1)}
-     className="group flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full text-[10px] font-bold uppercase tracking-widest text-muted hover:text-foreground transition-all mb-12"
+     onClick={() => navigate("/")}
+     className="group flex items-center gap-2 text-xs font-medium lowercase text-muted/40 hover:text-accent transition-colors my-16"
     >
      <HugeiconsIcon
       icon={ArrowLeft02Icon}
       size={14}
       className="group-hover:-translate-x-1 transition-transform"
      />
-     Back Home
+     <span>back to home</span>
     </motion.button>
 
-    <header className="flex flex-col lg:flex-row gap-8 lg:gap-24 items-start">
-     <div className="lg:w-1/3">
-      <motion.span
-       variants={fadeInUp}
-       className="block text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-4"
-      >
-       Archive — 001
-      </motion.span>
+    <header className="space-y-10">
+     <div className="space-y-4">
+      <motion.div variants={fadeInUp} className="flex items-center gap-3">
+       <span className="text-[10px] font-medium text-accent/60 lowercase tracking-widest">
+        archive — 001
+       </span>
+       <div className="h-[1px] w-8 bg-border/40" />
+      </motion.div>
+
       <motion.h1
        variants={fadeInUp}
-       className="text-5xl md:text-8xl font-black uppercase leading-[0.85] tracking-[-0.06em]"
+       className="text-5xl md:text-8xl font-light lowercase tracking-tighter leading-none"
       >
-       All
-       <br />
-       Works
+       all works
       </motion.h1>
      </div>
-     <div className="lg:w-2/3 lg:pt-14">
-      <motion.p
-       variants={fadeInUp}
-       className="text-xl md:text-2xl font-normal leading-tight tracking-tight text-foreground/80 max-w-xl"
-      >
-       A horizontal exploration of digital products and technical experiments.
-      </motion.p>
-     </div>
+
+     <motion.p
+      variants={fadeInUp}
+      className="text-xl md:text-2xl font-light leading-relaxed text-foreground/80 max-w-xl"
+     >
+      a continuous exploration of digital products and technical experiments.
+     </motion.p>
     </header>
    </div>
 
    <motion.div
     variants={fadeInUp}
-    className="flex flex-nowrap overflow-x-auto gap-8 px-6 md:px-[calc((100vw-1280px)/2+48px)] pb-12 snap-x snap-mandatory scrollbar-hide"
+    className="flex flex-nowrap overflow-x-auto gap-6 md:gap-12 pb-12 snap-x snap-mandatory no-scrollbar scroll-px-6 md:scroll-px-24"
    >
+    <div className="shrink-0 w-6 md:w-12 lg:w-24" />
+
     {allProjects.map((project, idx) => (
      <div
       key={idx}
-      className="w-[85vw] md:w-[450px] lg:w-[550px] shrink-0 snap-center md:snap-start"
+      className="w-[85vw] md:w-[45vw] lg:w-[40vw] shrink-0 snap-center"
      >
       <ProjectBox project={project} animateOnce={false} />
      </div>
     ))}
 
-    <div className="shrink-0 w-12 md:w-24" />
+    <div className="shrink-0 w-6 md:w-12 lg:w-24" />
    </motion.div>
   </motion.section>
  );

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import ProjectBox from "@/components/shared/ProjectBox";
 import useProjects from "@/hooks/useProjects";
 import useMotionPresets from "@/hooks/useMotionPresets";
@@ -17,73 +15,46 @@ const ProjectSection = () => {
    whileInView="show"
    variants={{
     hide: { opacity: 0 },
-    show: {
-     opacity: 1,
-     transition: { staggerChildren: 0.15 }
-    }
+    show: { opacity: 1, transition: { staggerChildren: 0.1 } }
    }}
    viewport={{ once: true, amount: 0.1 }}
-   className="w-full max-w-7xl mx-auto py-24 px-6 md:px-12 bg-background"
+   className="w-full py-20 px-6 md:px-24 bg-background"
   >
-   <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-start">
-    <div className="w-full md:w-1/3 md:sticky md:top-32 z-10 self-start">
-     <motion.span
-      variants={fadeInUp}
-      className="block text-[10px] font-bold uppercase tracking-[0.2em] text-muted/50 mb-4"
-     >
-      03 — Portfolio
-     </motion.span>
-     <motion.h2
-      variants={fadeInUp}
-      className="text-5xl md:text-7xl font-black uppercase leading-[0.85] tracking-[-0.06em] text-foreground"
-     >
-      Selected
-      <br />
-      Works
-     </motion.h2>
-    </div>
+   <div className="max-w-6xl mx-auto">
+    <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-10">
+     <span className="text-[10px] font-medium text-accent/60 lowercase tracking-widest">
+      03. selected works
+     </span>
+     <div className="h-[1px] w-8 bg-border/40" />
+    </motion.div>
 
-    <div className="w-full md:w-2/3 space-y-16">
+    <div className="space-y-24">
      <motion.p
       variants={fadeInUp}
-      className="text-xl md:text-2xl font-normal leading-tight tracking-tight text-foreground/80 max-w-xl"
+      className="text-2xl md:text-3xl font-light leading-relaxed text-foreground/80 max-w-2xl"
      >
-      Blending the latest technologies to create innovative, problem-solving
-      projects with a focus on high-performance interfaces.
+      blending modern technologies to create{" "}
+      <span className="highlighted-text">innovative</span> products with
+      high-performance engineering.
      </motion.p>
 
-     <motion.div
-      variants={fadeInUp}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
-     >
-      {projects.map((project, idx) => (
-       <div key={idx} className="w-full">
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+      {projects.slice(0, 4).map((project, idx) => (
+       <div key={idx} className={idx % 2 !== 0 ? "md:mt-20" : ""}>
         <ProjectBox project={project} />
        </div>
       ))}
-     </motion.div>
+     </div>
 
-     <motion.div
-      variants={fadeInUp}
-      className="pt-12 border-t border-border/60 flex justify-center md:justify-start"
-     >
+     <motion.div variants={fadeInUp} className="pt-6">
       <Link
        to="/projects"
-       className="group flex items-center gap-4 px-10 py-5 bg-card border border-border rounded-2xl hover:border-foreground/20 transition-all duration-300"
+       className="group flex items-center gap-3 text-base font-medium lowercase text-muted/40 hover:text-accent transition-all duration-500"
       >
-       <div className="flex flex-col items-start pr-4 border-r border-border/60">
-        <span className="text-[9px] font-bold uppercase tracking-widest text-muted/40">
-         Archive
-        </span>
-        <span className="text-xs font-black uppercase tracking-tight text-foreground">
-         Explore All
-        </span>
-       </div>
-       <HugeiconsIcon
-        icon={LinkSquare01Icon}
-        size={20}
-        className="text-muted/60 group-hover:text-foreground group-hover:translate-x-1 transition-all"
-       />
+       <span>view the archive</span>
+       <span className="text-xl group-hover:translate-x-1.5 transition-transform duration-500">
+        →
+       </span>
       </Link>
      </motion.div>
     </div>

@@ -51,18 +51,31 @@
  }
 
  body {
-  @apply bg-background text-foreground font-inter text-[0.9rem] md:text-base antialiased tracking-tight;
+  @apply bg-background text-foreground font-inter text-[0.95rem] md:text-[1.05rem] antialiased tracking-tight leading-relaxed;
  }
 
  h1,
  h2,
  h3 {
-  @apply font-header font-black uppercase tracking-[-0.05em];
+  @apply font-header font-medium normal-case tracking-[-0.03em] leading-tight;
+ }
+
+ h1 {
+  @apply text-3xl md:text-5xl font-light;
+ }
+
+ h2 {
+  @apply text-2xl md:text-3xl font-normal;
+ }
+
+ ::selection {
+  @apply bg-accent/20 text-foreground;
  }
 
  .scrollbar-hide::-webkit-scrollbar {
   display: none;
  }
+
  .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -70,14 +83,6 @@
 }
 
 @layer components {
- .section-tag {
-  @apply text-soft text-[10px] font-bold uppercase tracking-[0.2em] -mb-2;
- }
-
- .section-heading {
-  @apply text-4xl md:text-6xl font-black uppercase leading-[0.9] tracking-[-0.05em];
- }
-
  .project-info-seperator {
   @apply w-full flex flex-col gap-2 pb-3 border-b border-border;
  }

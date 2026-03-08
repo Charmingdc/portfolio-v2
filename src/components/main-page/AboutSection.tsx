@@ -14,97 +14,72 @@ const AboutSection = () => {
    whileInView="show"
    variants={containerAnim}
    viewport={{ once: true, amount: 0.1 }}
-   className="w-full max-w-7xl mx-auto py-24 px-6 md:px-12 bg-background"
+   className="w-full py-16 px-6 md:px-24 bg-background"
   >
-   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-    <div className="lg:col-span-4 lg:sticky lg:top-24 z-10">
-     <motion.span
-      variants={fadeInUp}
-      className="block text-[10px] font-bold uppercase tracking-[0.2em] text-muted/50 mb-4"
-     >
-      01 — About Me
-     </motion.span>
-     <motion.h2
-      variants={fadeInUp}
-      className="text-5xl md:text-7xl font-black uppercase leading-[0.85] tracking-[-0.06em] text-foreground"
-     >
-      The
-      <br />
-      Identity
-     </motion.h2>
+   <div className="max-w-5xl">
+    <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-10">
+     <span className="text-[10px] font-medium text-accent/60 lowercase tracking-widest">
+      01. about
+     </span>
+     <div className="h-[1px] w-8 bg-border/40" />
+    </motion.div>
 
-     <motion.div variants={fadeInUp} className="mt-10">
-      <a
-       href="/resume.pdf"
-       download="Adebayo_Muis_CV.pdf"
-       target="_blank"
-       className="inline-flex items-center gap-4 p-4 bg-card border border-border rounded-2xl hover:border-foreground/20 transition-all group"
-      >
-       <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-background border border-border rounded-xl group-hover:bg-foreground group-hover:text-background transition-colors">
-        <HugeiconsIcon icon={Download01Icon} size={18} />
-       </div>
-       <div className="flex flex-col pr-4">
-        <span className="text-[9px] font-bold uppercase tracking-widest text-muted/40">
-         Experience
-        </span>
-        <p className="text-xs font-bold text-foreground uppercase tracking-tight">
-         Download CV
-        </p>
-       </div>
-      </a>
-     </motion.div>
-    </div>
-
-    <div className="lg:col-span-8 space-y-16">
-     <motion.div variants={fadeInUp} className="space-y-10">
-      <p className="text-xl md:text-2xl font-normal leading-relaxed tracking-tight text-foreground/90 max-w-2xl">
-       I like to craft <span className="highlighted-text">solid</span> and{" "}
-       <span className="highlighted-text">scalable</span> frontend products with
-       great user experiences.
+    <div className="max-w-4xl space-y-16">
+     <motion.div variants={fadeInUp} className="space-y-12">
+      <p className="text-xl md:text-3xl font-light leading-snug text-foreground/80 max-w-3xl">
+       i solve for the{" "}
+       <span className="highlighted-text">complexity of the client-side</span>,
+       building resilient systems that handle asynchronous data streams while
+       maintaining 60fps interaction fidelity.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-border/60">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
        <div className="space-y-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted/40">
-         Background
+        <span className="text-[11px] text-muted/30 lowercase tracking-widest">
+         technical path
         </span>
-        <p className="text-sm leading-relaxed text-card-foreground font-normal">
-         I’m{" "}
-         <span className="font-bold underline underline-offset-2 decoration-1 decoration-wavy decoration-accent">
-          {" "}
-          Adebayo Muis{" "}
-         </span>
-         , a Nigeria-based frontend software engineer with 3+ years of
-         experience building real-world web applications, from small tools to
-         full product interfaces.
+        <p className="text-sm md:text-base text-soft leading-relaxed font-light">
+         based in nigeria, my focus over the last 3+ years has been mastering
+         the <span className="text-foreground">react lifecycle</span> and its
+         underlying reconciliation patterns. i specialize in creating
+         predictable frontend environments where performance and scalability are
+         baked into the core logic.
         </p>
        </div>
-
        <div className="space-y-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted/40">
-         Specialization
+        <span className="text-[11px] text-muted/30 lowercase tracking-widest">
+         philosophy
         </span>
-        <p className="text-sm leading-relaxed text-card-foreground font-normal">
-         A self-taught developer specializing in React, TypeScript, and Tailwind
-         CSS. I take pride in writing clean, well-structured code and building
-         interfaces that scale reliably.
+        <p className="text-sm md:text-base text-soft leading-relaxed font-light">
+         i prioritize{" "}
+         <span className="highlighted-text">type-safe interaction logic</span>
+         and memoization strategies that prevent layout thrashing. by treating
+         the UI as a pure function of state, i build interfaces that remain
+         stable even as the underlying business requirements shift and scale.
         </p>
        </div>
       </div>
      </motion.div>
 
-     <motion.div variants={fadeInUp} className="pt-8">
-      <div className="mb-6 flex justify-between items-end px-1">
-       <span className="text-[10px] font-bold uppercase tracking-widest text-muted/40">
-        Open Source Contributions
-       </span>
-       <span className="text-[9px] font-mono text-muted/30 uppercase tracking-tighter">
-        Github_Activity_v1.0
-       </span>
-      </div>
-      <div className="p-8 bg-card border border-border rounded-[2.5rem] overflow-hidden shadow-inner shadow-background/20 transform origin-top-left rotate-3 ml-1 transition-all duration-200 hover:rotate-0">
+     <motion.div variants={fadeInUp} className="space-y-6">
+      <span className="text-[11px] text-muted/30 lowercase tracking-widest">
+       open source activity
+      </span>
+      <div className="p-6 md:p-10 bg-card/10 border border-border/40 rounded-xl overflow-hidden">
        <ContributionGraph />
       </div>
+     </motion.div>
+
+     <motion.div variants={fadeInUp}>
+      <a
+       href="/resume.pdf"
+       className="group inline-flex items-center gap-4 text-sm font-medium text-muted/60 hover:text-accent transition-all duration-500"
+      >
+       <div className="w-10 h-10 flex items-center justify-center rounded-full border border-border/60 group-hover:border-accent group-hover:bg-accent/5 transition-all">
+        <HugeiconsIcon icon={Download01Icon} size={16} />
+       </div>
+       <span className="tracking-tight">download experience.pdf</span>
+      </a>
      </motion.div>
     </div>
    </div>
