@@ -37,7 +37,7 @@ const ContactSection = () => {
    <div className="max-w-5xl">
     <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-10">
      <span className="text-[10px] font-medium text-accent/60 lowercase tracking-widest">
-      04. connection
+      05. connection
      </span>
      <div className="h-[1px] w-8 bg-border/40" />
     </motion.div>

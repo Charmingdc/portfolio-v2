@@ -31,7 +31,7 @@ const ProjectSection = () => {
     <div className="space-y-24">
      <motion.p
       variants={fadeInUp}
-      className="text-2xl md:text-3xl font-light leading-relaxed text-foreground/80 max-w-2xl"
+      className="text-xl md:text-3xl font-light leading-snug text-foreground/80 max-w-3xl"
      >
       blending modern technologies to create{" "}
       <span className="highlighted-text">innovative</span> products with

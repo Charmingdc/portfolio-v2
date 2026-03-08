@@ -26,7 +26,7 @@ const HeroSection = () => {
    <div className="max-w-4xl space-y-12">
     <motion.div variants={itemVariants} className="flex items-center gap-1">
      <span className="text-[10px] font-medium text-muted/40 lowercase tracking-[0.3em]">
-      short intro ↳
+      hello there 👋🏽,
      </span>
      <div className="self-end h-[1px] w-4 bg-border/40" />
     </motion.div>
