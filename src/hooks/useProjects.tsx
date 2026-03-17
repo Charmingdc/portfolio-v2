@@ -26,6 +26,36 @@ const useProjects = () => {
    liveUrl: "https://www.npmjs.com/package/@charmingdc/scrolljs"
   },
   {
+   name: "Postmorph",
+   githubLink: "https://github.com/Charmingdc/postmorph",
+   type: "AI Content Repurposing App",
+   imgSources: [
+    "/illustrations/postmorph-preview.jpg",
+    "/illustrations/postmorph-preview-02.jpg",
+    "/illustrations/postmorph-preview-03.jpg"
+   ],
+   description:
+    "AI-powered web application for effortlessly repurposing content across multiple social platforms.",
+   detailedDescription:
+    "Postmorph is a cutting-edge platform designed to revolutionize content workflows. It leverages advanced AI to transform existing content from sources like YouTube, TikTok, and blogs into tailored formats for different platforms.",
+   challenge:
+    "Content creators struggle with the time-consuming process of manually adapting single pieces of content for multiple platforms while maintaining brand consistency.",
+   approach:
+    "I built a full-stack Next.js application integrating the Vercel AI SDK with Google Gemini for generation, Supabase for backend infrastructure, and Polar for a custom pay-as-you-go credit system.",
+   solution:
+    "A comprehensive tool featuring one-click AI repurposing, custom brand voice management, and an interactive draft editor to streamline content distribution.",
+   technologies: [
+    "Next.js",
+    "TypeScript",
+    "Supabase",
+    "Google Gemini",
+    "Polar",
+    "Tailwind CSS"
+   ],
+   date: "2026",
+   liveUrl: "https://postmorph.vercel.app"
+  },
+  {
    name: "Emojinary",
    githubLink: "https://github.com/Charmingdc/Emojinary",
    type: "Web-based Emoji Puzzles Game",
@@ -189,7 +219,7 @@ const useProjects = () => {
   }
  ];
 
- const projects = allProjects.slice(0, 5);
+ const projects = allProjects.slice(0, 6);
  return { projects, allProjects };
 };
 

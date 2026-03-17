@@ -4,7 +4,7 @@ import type { Variants, Easing } from "motion/react";
 const useMotionPresets = () => {
  const reduceMotion = useReducedMotion();
 
- const duration = reduceMotion ? 0.2 : 0.8;
+ const duration = reduceMotion ? 0.2 : 0.6;
  const ease: Easing = reduceMotion ? [0, 0, 1, 1] : [0.16, 1, 0.3, 1];
 
  const containerAnim: Variants = {
