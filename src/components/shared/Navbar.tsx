@@ -32,7 +32,6 @@ const Navbar = () => {
 
  return (
   <motion.nav
-   
    style={{
     backgroundColor,
     backdropFilter: backdropBlur,

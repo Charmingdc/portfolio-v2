@@ -41,7 +41,7 @@ const useProjects = () => {
    challenge:
     "Content creators struggle with the time-consuming process of manually adapting single pieces of content for multiple platforms while maintaining brand consistency.",
    approach:
-    "I built a full-stack Next.js application integrating the Vercel AI SDK with Google Gemini for generation, Supabase for backend infrastructure, and Polar for a custom pay-as-you-go credit system.",
+    "I built a full-stack Next.js application integrating the Vercel AI SDK with Google Gemini for generation, Supabase for backend infrastructure, and DodoPayments for a custom pay-as-you-go credit system.",
    solution:
     "A comprehensive tool featuring one-click AI repurposing, custom brand voice management, and an interactive draft editor to streamline content distribution.",
    technologies: [
@@ -49,7 +49,7 @@ const useProjects = () => {
     "TypeScript",
     "Supabase",
     "Google Gemini",
-    "Polar",
+    "DodoPayments",
     "Tailwind CSS"
    ],
    date: "2026",
