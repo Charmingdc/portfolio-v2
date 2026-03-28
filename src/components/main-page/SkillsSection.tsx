@@ -36,7 +36,7 @@ const SkillsSection = () => {
       products.
      </motion.p>
 
-     <div className="flex flex-wrap gap-x-10 gap-y-8 pt-4">
+     <div className="w-[95%] flex flex-wrap gap-x-10 gap-y-8 pt-4">
       {tools.map(tool => (
        <motion.div
         key={tool.altText}
@@ -49,7 +49,6 @@ const SkillsSection = () => {
          <div className="absolute w-4 h-4 rounded-full border border-accent/0 group-hover:border-accent/20 transition-all duration-500" />
         </div>
 
-      
         <span className="text-base md:text-lg font-medium text-muted/40 lowercase tracking-tight group-hover:text-foreground transition-all duration-500">
          {tool.altText}
         </span>

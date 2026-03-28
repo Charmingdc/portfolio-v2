@@ -26,16 +26,15 @@ const HeroSection = () => {
    <div className="max-w-4xl space-y-12">
     <motion.div variants={itemVariants} className="flex items-center gap-1">
      <span className="text-[10px] font-medium text-muted/40 lowercase tracking-[0.3em]">
-      hello there 👋🏽,
+      hey 👋🏽,
      </span>
      <div className="self-end h-[1px] w-4 bg-border/40" />
     </motion.div>
 
     <motion.div variants={itemVariants}>
-     <h1 className="w-[85%] text-3xl md:text-6xl font-light leading-tight tracking-tighter text-foreground lowercase">
-      i build <span className="highlighted-text">resilient</span> frontend
-      systems that stay fast and predictable, turning complex data into fluid,
-      high-quality experiences that never break under pressure.
+     <h1 className="w-[85%] text-3xl md:text-6xl font-light leading-tight tracking-tight text-foreground opacity-80">
+      i'm Adebayo Muis. a frontend engineer obsessed with the details that shape
+      user experience.
      </h1>
     </motion.div>
 
