@@ -31,7 +31,7 @@ const Navbar = () => {
     borderBottom: `1px solid`,
     borderBottomColor: borderOpacity
    }}
-   className="fixed top-0 left-0 w-full z-50 px-6 md:px-24 py-6 transition-colors duration-300"
+   className="fixed top-0 left-0 w-full z-50 px-6 md:px-24 py-4 transition-colors duration-300"
   >
    <div className="max-w-6xl mx-auto flex justify-between items-center">
     <motion.div

@@ -19,9 +19,9 @@ const ProjectsList = () => {
     hide: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.1 } }
    }}
-   className="w-full bg-background min-h-screen pt-16 pb-32 overflow-x-hidden"
+   className="w-full bg-background min-h-screen pt-16 pb-28 overflow-x-hidden"
   >
-   <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24 mb-20">
+   <div className="max-w-6xl mx-auto px-6 mb-20">
     <motion.button
      variants={fadeInUp}
      onClick={() => navigate("/")}

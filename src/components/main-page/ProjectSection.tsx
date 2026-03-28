@@ -46,7 +46,7 @@ const ProjectSection = () => {
       ))}
      </div>
 
-     <motion.div variants={fadeInUp} className="pt-6">
+     <motion.div variants={fadeInUp} className="pt-4">
       <Link
        to="/projects"
        className="group flex items-center gap-3 text-base font-medium lowercase text-muted/40 hover:text-accent transition-all duration-500"
