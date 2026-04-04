@@ -5,7 +5,8 @@ export default {
 		extend: {
 			fontFamily: {
 				heading: ['Inter', 'sans-serif'],
-				body: ['IBM Plex Sans', 'sans-serif']
+				body: ['IBM Plex Sans', 'sans-serif'],
+				ibm: ['IBM Plex Sans', 'sans-serif']
 			},
 			colors: {
 				foreground: 'rgb(var(--foreground) / <alpha-value>)',
