@@ -39,7 +39,7 @@
 			{#if data.post.data.tags?.length}
 				<div class="flex flex-wrap gap-2 text-sm text-foreground/60">
 					{#each data.post.data.tags as tag}
-						<span class="underline">{tag}</span>
+						<span>#{tag}</span>
 					{/each}
 				</div>
 			{/if}

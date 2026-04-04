@@ -11,7 +11,7 @@
 			<li>
 				<a
 					href={`/blog/${post.slug}`}
-					class="group w-full grid gap-2 md:gap-10 md:grid-cols-[minmax(120px,150px)_1fr] py-4 md:py-4 md:border-b border-border/40 transition-colors duration-20 focus-within:bg-foreground/5"
+					class="group w-full grid gap-2 md:gap-10 md:grid-cols-[minmax(120px,150px)_1fr] py-4 md:py-4 md:border-b border-border/40 transition-colors duration-20"
 				>
 					<span class="text-[0.85rem] text-foreground/50 order-2 md:order-1 md:self-start">
 						{post.data.date}
