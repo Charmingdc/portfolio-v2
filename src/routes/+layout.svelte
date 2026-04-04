@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Adebayo Muis</title>
+	<title> Adebayo Muis | Frontend Engineer </title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
@@ -67,7 +67,7 @@
 {@render children()}
 
 <footer
-	class="w-full flex md:hidden items-center justify-center lowercase text-foreground/50 bg-background py-5 border-t border-border mt-16 -mb-5"
+	class="w-full flex md:hidden items-center justify-center lowercase text-foreground/50 bg-background py-5 mt-16 -mb-5"
 >
 	© {romanize(new Date().getFullYear())} adebayo muis.
 </footer>

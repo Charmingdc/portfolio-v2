@@ -7,24 +7,41 @@
 <main id="projects-page" class="w-full min-h-[70vh] flex flex-col gap-9">
 	<h1 class="font-semibold text-xl">Projects</h1>
 
-	<div class="w-full flex flex-col gap-9">
+	<div class="w-full flex flex-col gap-6">
 		{#each SITE_DATA.projects as { name, description, githubRepo, liveUrl }}
-			<div class="w-full flex flex-col gap-2">
-				<a href={liveUrl} target="_blank">
-					<h2>{name}</h2>
-				</a>
+			<article
+				class="group w-full grid gap-3 md:gap-10 md:grid-cols-[minmax(180px,260px)_1fr] py-4 md:py-4 md:border-b border-border/40 transition-colors duration-200 md:hover:bg-foreground/5 focus-within:bg-foreground/5"
+				aria-labelledby={`project-${name}`}
+			>
+				<h2 id={`project-${name}`}>
+					<a
+						href={liveUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="outline-none focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm"
+					>
+						{name}
+					</a>
+				</h2>
 
-				<p>{description}</p>
+				<div class="flex flex-col gap-2">
+					<p class="text-foreground/70">{description}</p>
 
-				<a
-					href="https://github/{SITE_DATA.githubUsername}/{githubRepo}"
-					target="_blank"
-					class="flex items-center gap-1 text-foreground/70"
-				>
-					View source code
-					<HugeiconsIcon icon={ArrowRight02Icon} size={14} />
-				</a>
-			</div>
+					<a
+						href={`https://github.com/${SITE_DATA.githubUsername}/${githubRepo}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center gap-1 text-foreground/60 transition-colors group-hover:text-foreground	focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm w-fit"
+					>
+						View source code
+						<HugeiconsIcon
+							icon={ArrowRight02Icon}
+							size={14}
+							class="transition-transform duration-200 group-hover:translate-x-1"
+						/>
+					</a>
+				</div>
+			</article>
 		{/each}
 	</div>
 </main>
