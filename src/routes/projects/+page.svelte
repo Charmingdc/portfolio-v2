@@ -7,10 +7,10 @@
 <main id="projects-page" class="w-full min-h-[70vh] flex flex-col gap-9">
 	<h1 class="font-semibold text-xl">Projects</h1>
 
-	<div class="w-full flex flex-col gap-6">
+	<div class="w-full flex flex-col gap-3">
 		{#each SITE_DATA.projects as { name, description, githubRepo, liveUrl }}
 			<article
-				class="group w-full grid gap-3 md:gap-10 md:grid-cols-[minmax(180px,260px)_1fr] py-4 md:py-4 md:border-b border-border/40 transition-colors duration-200 md:hover:bg-foreground/5 focus-within:bg-foreground/5"
+				class="group w-full grid gap-3 md:gap-10 md:grid-cols-[minmax(180px,260px)_1fr] py-5 md:py-4 md:border-b border-border/40 transition-colors duration-200 md:hover:bg-foreground/5 focus-within:bg-foreground/5"
 				aria-labelledby={`project-${name}`}
 			>
 				<h2 id={`project-${name}`}>
@@ -31,7 +31,7 @@
 						href={`https://github.com/${SITE_DATA.githubUsername}/${githubRepo}`}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="flex items-center gap-1 text-foreground/60 transition-colors group-hover:text-foreground	focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm w-fit"
+						class="flex items-center gap-1 text-foreground/60 transition-colors group-hover:text-foreground focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm w-fit"
 					>
 						View source code
 						<HugeiconsIcon

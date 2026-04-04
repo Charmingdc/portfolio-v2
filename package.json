@@ -38,6 +38,7 @@
 	"dependencies": {
 		"@charmingdc/romanify": "^1.0.0",
 		"@hugeicons/core-free-icons": "^4.1.1",
-		"@hugeicons/svelte": "^1.1.2"
+		"@hugeicons/svelte": "^1.1.2",
+		"skriplet": "^0.1.0"
 	}
 }

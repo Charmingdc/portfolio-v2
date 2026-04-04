@@ -1,42 +1,84 @@
-# sv
+# Portfolio v2
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Overview
 
-## Creating a project
+This project is a personal portfolio website designed to help me showcase my work and share my thoughts online. It brings together my projects, blog posts, and an "about me" section, making it straightforward for visitors to learn about what I do and my interests. It's built to be a clean, fast, and easily maintainable online presence.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```sh
-# create a new project
-npx sv create my-app
+- **Personalized Homepage**: A welcoming introduction to me, my skills, and my professional focus.
+- **Dynamic Project Showcase**: Browse a curated list of past projects, complete with descriptions and links to live demos or source code.
+- **Integrated Blog**: Read and explore my blog posts, covering various topics, with content automatically loaded from Markdown files.
+- **Detailed Post View**: Each blog post has its own dedicated page displaying the content, relevant tags, and publication date.
+- **Responsive Design**: The website is built to look great and function seamlessly across all devices, from desktops to mobile phones.
+- **Easy Content Management**: Blog posts and project details are managed through simple Markdown files and data structures, making updates very straightforward.
+
+## Getting Started
+
+To get a copy of this project up and running on your local machine, follow these steps.
+
+### Installation
+
+First, clone the repository to your local machine:
+
+```bash
+git clone git@github.com:Charmingdc/portfolio-v2
+cd portfolio-v2
 ```
 
-To recreate this project with the same configuration:
+Then, install the necessary dependencies:
 
-```sh
-# recreate this project
-npx sv@0.14.0 create --template minimal --types ts --add prettier eslint --install npm .
+```bash
+npm install
 ```
 
-## Developing
+### Environment Variables
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+This project does not require any specific environment variables beyond the standard setup handled by SvelteKit for development and production builds. Content is loaded locally from markdown files.
 
-```sh
+## Usage
+
+Once you've installed the dependencies, you can start the development server:
+
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+This will usually start the server at `http://localhost:5173` (or another available port). Open your browser and navigate to this address to view the portfolio.
 
-To create a production version of your app:
+- **Home**: The main page introduces me and my work.
+- **Projects**: Check out the projects page to see a list of my work, with links to source code and live demos.
+- **Blog**: Visit the blog section to read articles and insights. Clicking on any post will take you to its dedicated page.
 
-```sh
-npm run build
-```
+## Technologies Used
 
-You can preview the production build with `npm run preview`.
+| Technology           | Description                                                                                         |
+| :------------------- | :-------------------------------------------------------------------------------------------------- |
+| Svelte               | Modern framework for building user interfaces.                                                      |
+| SvelteKit            | Framework for building robust, performant web applications with Svelte.                             |
+| TypeScript           | Superset of JavaScript that adds static type definitions for better code quality.                   |
+| Vite                 | Next-generation frontend tooling, providing a fast development server and build tool.               |
+| Tailwind CSS         | Utility-first CSS framework for rapidly building custom designs.                                    |
+| PostCSS              | Tool for transforming CSS with JavaScript plugins.                                                  |
+| ESLint               | Pluggable JavaScript linter to identify and report on patterns found in ECMAScript/JavaScript code. |
+| Prettier             | Opinionated code formatter that ensures consistent code style.                                      |
+| Skriplet             | A utility for managing and rendering Markdown content collections.                                  |
+| Hugeicons            | A comprehensive icon library for clean and modern user interfaces.                                  |
+| @charmingdc/romanify | A utility for converting numbers to Roman numerals.                                                 |
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Author Info
+
+- **Adebayo Muis**
+  - [GitHub](https://github.com/Charmingdc)
+  - [X (formerly Twitter)](https://x.com/Charmingdc01)
+  - [Email](mailto:charmingdc002@gmail.com)
+
+## Badges
+
+[![Svelte](https://img.shields.io/badge/svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/)
+[![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://kit.svelte.dev/)
+[![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)

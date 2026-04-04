@@ -1,13 +1,28 @@
 <script lang="ts">
-	import { HugeiconsIcon } from '@hugeicons/svelte';
-	import { ArrowLeft02Icon } from '@hugeicons/core-free-icons';
+	import type { ContentItem } from 'skriplet';
+	let { data }: { data: { posts: ContentItem[] } } = $props();
 </script>
 
-<main class="w-full min-h-[72vh] flex flex-col items-center justify-center gap-2">
-	<h1 class="text-3xl">Coming Soon...</h1>
+<main id="blog-page" class="w-full min-h-[72vh] flex flex-col gap-9 md:px-0">
+	<h1 class="font-semibold text-xl">Blog</h1>
 
-	<a href="/" class="flex items-center gap-1 text-foreground/50">
-		<HugeiconsIcon icon={ArrowLeft02Icon} size={14} />
-		Return home
-	</a>
+	<ul class="flex flex-col gap-2">
+		{#each data.posts as post}
+			<li>
+				<a
+					href={`/blog/${post.slug}`}
+					class="group w-full grid gap-2 md:gap-10 md:grid-cols-[minmax(120px,150px)_1fr] py-4 md:py-4 md:border-b border-border/40 transition-colors duration-20 focus-within:bg-foreground/5"
+				>
+					<span class="text-[0.85rem] text-foreground/50 order-2 md:order-1 md:self-start">
+						{post.data.date}
+					</span>
+
+					<div class="flex flex-col gap-1 order-1 md:order-2">
+						<p class="text-foreground font-medium">{post.data.title}</p>
+						<p class="text-foreground/50">{post.data.description}</p>
+					</div>
+				</a>
+			</li>
+		{/each}
+	</ul>
 </main>

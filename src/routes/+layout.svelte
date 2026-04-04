@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title> Adebayo Muis | Frontend Engineer </title>
+	<title>Adebayo Muis | Frontend Engineer</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
@@ -47,7 +47,7 @@
 			{/each}
 		</ul>
 
-		<ul class="flex items-center gap-2.5">
+		<ul class="flex items-center gap-3">
 			{#each socials as { icon, link, platform }}
 				<li>
 					<a
