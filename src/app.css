@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ :root {
+  --foreground: 40 40 40;
+  --background: 254 254 254;
+  --border: 140 140 140;
+ }
+
+ html {
+  scroll-behavior: smooth;
+ }
+
+ body {
+  @apply outline-none w-full font-body text-foreground bg-background text-[0.9rem] p-8 md:py-10 md:px-16;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+  @apply font-heading font-bold;
+ }
+}
