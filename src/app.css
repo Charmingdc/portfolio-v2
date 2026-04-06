@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--foreground: 235 235 235;
+		--background: 12 12 12;
+		--border: 120 120 120;
+	}
+
+	.dark {
+		--foreground: 235 235 235;
+		--background: 12 12 12;
+		--border: 120 120 120;
+	}
+
+	.light {
+		--foreground: 20 20 20;
+		--background: 254 254 254;
+		--border: 180 180 180;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply outline-none w-full font-ibm text-foreground bg-background text-[0.85rem] p-7 md:py-8 md:px-14;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-ibm font-bold;
+	}
+
+	h2 {
+		@apply font-medium text-[0.9rem];
+	}
+
+	p {
+		@apply text-foreground/50;
+	}
+}

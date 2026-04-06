@@ -1,89 +1,175 @@
-# Adebayo Muis: Creative Frontend Engineer Portfolio
+# Developer Portfolio & Blog
 
 ## Overview
-A meticulously crafted personal portfolio showcasing the expertise of Adebayo Muis, a creative frontend engineer. This platform highlights resilient, high-performance web applications built with modern technologies, emphasizing sleek user interfaces, seamless experiences, and predictable system behavior. It serves as a testament to a deep understanding of the React lifecycle, type-safe development, and robust architectural patterns.
+
+This project is a personal website designed to showcase my work, share my thoughts on technology, and provide a central hub for my online presence. It helps me present my skills and projects to the world in an organized and engaging way, allowing visitors to easily learn about what I do and read my articles.
 
 ## Features
--   **Interactive Hero Section**: An engaging and dynamic introduction to the portfolio, featuring key social links.
--   **Comprehensive About Section**: Provides in-depth insight into the developer's technical philosophy, development approach, and open-source contributions visualized through a GitHub activity graph.
--   **Dynamic Skills Showcase**: Visually presents expertise across a range of modern frontend technologies and development tools.
--   **Curated Project Portfolio**: Features a selection of projects with detailed case studies for each, outlining challenges, engineering approaches, and final solutions.
--   **Continuous Learning Integration**: Includes a "Currently Reading" section, demonstrating a commitment to ongoing professional growth and knowledge acquisition.
--   **Seamless Contact Options**: Offers clear and accessible methods for professional inquiries, including email, phone, and social media profiles.
--   **Responsive & Adaptive Design**: Optimized for a consistent and high-quality user experience across all devices and screen sizes, leveraging Tailwind CSS.
--   **Fluid Animations & Transitions**: Enhanced user interface and experience through smooth and purposeful animations powered by the Motion (Framer Motion) library.
--   **SEO Optimized Structure**: Configured for improved discoverability with well-defined meta tags, `robots.txt`, and `sitemap.xml`.
--   **Optional Immersive Audio Experience**: An integrated music player offers a unique and personalized browsing ambiance.
--   **Robust Type-Safe Development**: Engineered with TypeScript for superior code quality, maintainability, and a streamlined developer experience.
+
+- **Dynamic Blog**: Browse a collection of articles and dive into individual posts with rich content.
+- **Project Showcase**: Explore a dedicated section highlighting various projects with descriptions and links to live demos or source code.
+- **About Me Section**: Learn about my background, the tools I commonly use, and my professional interests.
+- **Responsive Design**: Enjoy a seamless experience across different devices, from desktops to mobile phones.
+- **Theme Toggling**: Switch between light and dark modes to suit your viewing preference.
+- **Smooth Page Transitions**: Experience fluid navigation between different sections of the site.
 
 ## Getting Started
 
+To get this portfolio up and running on your local machine, follow these steps:
+
 ### Installation
-To set up and run this project locally, follow these steps:
 
 1.  **Clone the Repository**:
     ```bash
-    git clone git@github.com:Charmingdc/portfolio-v2.git
-    ```
-2.  **Navigate to Project Directory**:
-    ```bash
+    git clone https://github.com/Charmingdc/portfolio-v2.git
     cd portfolio-v2
     ```
-3.  **Install Dependencies**:
+2.  **Install Dependencies**:
+    This project uses `npm` for package management.
     ```bash
     npm install
-    # or
-    yarn install
     ```
-4.  **Start the Development Server**:
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
-    This will start the Vite development server, usually accessible at `http://localhost:5173`.
 
-### Usage
-Once the development server is running, open your web browser and navigate to `http://localhost:5173` (or the port indicated by Vite in your terminal).
+### Environment Variables
 
-*   **Explore the Main Page**: Discover the interactive hero section, detailed "About" information, and a showcase of key skills.
-*   **View Projects**: Navigate to the "Projects" section or `/projects` route to see a comprehensive archive of works with in-depth case studies for each.
-*   **Continuous Learning**: Check the "Currently Reading" section to see what insightful materials the author is engaging with.
-*   **Connect**: Use the "Contact" section to reach out via email, phone, or professional social media links.
-*   **Enjoy Music**: An optional, subtle music player is integrated to provide an enhanced browsing experience.
+This application does not require any custom environment variables to run.
+
+## Usage
+
+Once you've installed the dependencies, you can start the development server, build the project, or preview the production build.
+
+### Development Server
+
+To start the development server with hot module reloading:
+
+```bash
+npm run dev
+```
+
+Open your browser to `http://localhost:5173` (or the port specified in your console).
+
+### Building the Project
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+This will compile the application into static assets in the `build` directory.
+
+### Previewing the Build
+
+After building, you can preview the production version locally:
+
+```bash
+npm run preview
+```
+
+This will start a local server to serve the built application.
+
+## API Documentation
+
+This project uses SvelteKit's server-side rendering (SSR) capabilities, where data fetching happens on the server before the page is delivered to the client. The following describes the server-side data loaders that supply content to the application.
+
+### Base URL
+
+The base URL for these server-side data loaders is relative to the application's root. For local development, this is typically:
+`http://localhost:5173`
+
+### Endpoints
+
+#### GET `/blog`
+
+Retrieves a list of all blog posts available on the site. This endpoint is primarily for SvelteKit's internal server-side data loading.
+
+**Request**:
+No request body or query parameters are needed.
+
+**Response**:
+
+```json
+{
+	"posts": [
+		{
+			"slug": "hello-there",
+			"data": {
+				"title": "Welcome to my space",
+				"description": "My first blog post, just introducing myself.",
+				"date": "2026-03-4",
+				"order": 1,
+				"tags": ["intro", "welcome"]
+			}
+		}
+	]
+}
+```
+
+**Errors**:
+
+- No specific error responses are returned directly by this loader; issues would typically result in an empty `posts` array or a SvelteKit internal error page.
+
+#### GET `/blog/[slug]`
+
+Retrieves the details and content of a single blog post based on its unique slug. This endpoint is primarily for SvelteKit's internal server-side data loading.
+
+**Request**:
+The `slug` parameter is part of the URL path (e.g., `/blog/hello-there`). No request body or query parameters are needed.
+
+**Response**:
+
+```json
+{
+	"post": {
+		"slug": "hello-there",
+		"data": {
+			"title": "Welcome to my space",
+			"description": "My first blog post, just introducing myself.",
+			"date": "2026-03-4",
+			"order": 1,
+			"tags": ["intro", "welcome"]
+		},
+		"content": "Hi, I'm **Adebayo Muis** but mostly recongnized as **Charmingdc** in the developers space.\n\nI'm currently a frontend engineer who priotize intentional designs and functional code over just \"this is beautiful UIs\" that doesn't resonate with users.\n"
+	}
+}
+```
+
+**Errors**:
+
+- 404: If a blog post with the provided `slug` cannot be found.
 
 ## Technologies Used
 
-| Category         | Technology                 | Description                                                        |
-| :--------------- | :------------------------- | :----------------------------------------------------------------- |
-| **Frontend Core**| [TypeScript](https://www.typescriptlang.org/)     | Statically typed superset of JavaScript for enhanced code quality. |
-|                  | [React](https://react.dev/)                       | Declarative JavaScript library for building user interfaces.       |
-|                  | [Vite](https://vitejs.dev/)                       | Next-generation frontend tooling for fast development.             |
-|                  | [Tailwind CSS](https://tailwindcss.com/)             | Utility-first CSS framework for rapid and custom UI development.   |
-| **Animation**    | [Motion (Framer Motion)](https://www.framer.com/motion/) | Production-ready motion library for React.                         |
-| **Routing**      | [React Router DOM](https://reactrouter.com/en/main) | Declarative routing for React applications.                        |
-| **Components/UI**| [Hugeicons React](https://hugeicons.com/)           | Comprehensive icon library for UI elements.                        |
-|                  | [React GitHub Calendar](https://github.com/grubersjoe/react-github-calendar) | Library to display GitHub contribution graphs.                     |
-|                  | [@charmingdc/romanify](https://www.npmjs.com/package/@charmingdc/romanify) | Custom library for converting numbers to Roman numerals.           |
-| **Tooling**      | [ESLint](https://eslint.org/)                     | Pluggable JavaScript linter for identifying and reporting patterns. |
-|                  | [PostCSS](https://postcss.org/)                   | Tool for transforming CSS with JavaScript plugins.                 |
-|                  | [Autoprefixer](https://github.com/postcss/autoprefixer) | PostCSS plugin to parse CSS and add vendor prefixes.             |
-| **Deployment**   | [Vercel](https://vercel.com/)                     | Cloud platform for static sites and serverless functions.          |
-| **Broader Expertise** | HTML, CSS, JavaScript, JQuery, Next.js, Supabase, Firebase, Framer, GitHub, SEO | Demonstrating a wider skill set applicable to various web projects. |
+| Technology               | Description                                          | Link                                                           |
+| :----------------------- | :--------------------------------------------------- | :------------------------------------------------------------- |
+| **SvelteKit**            | A web framework for building performant apps.        | [SvelteKit](https://kit.svelte.dev/)                           |
+| **Svelte**               | A reactive component framework.                      | [Svelte](https://svelte.dev/)                                  |
+| **TypeScript**           | A strongly typed superset of JavaScript.             | [TypeScript](https://www.typescriptlang.org/)                  |
+| **Node.js**              | JavaScript runtime for server-side operations.       | [Node.js](https://nodejs.org/en/)                              |
+| **Vite**                 | Next-generation frontend tooling.                    | [Vite](https://vitejs.dev/)                                    |
+| **Tailwind CSS**         | A utility-first CSS framework.                       | [Tailwind CSS](https://tailwindcss.com/)                       |
+| **PostCSS**              | A tool for transforming CSS with JavaScript.         | [PostCSS](https://postcss.org/)                                |
+| **Autoprefixer**         | PostCSS plugin to parse CSS and add vendor prefixes. | [Autoprefixer](https://github.com/postcss/autoprefixer)        |
+| **skriplet**             | Content collection manager for SvelteKit.            | [skriplet](https://www.npmjs.com/package/skriplet)             |
+| **svelte-motion**        | Declarative animations for Svelte.                   | [svelte-motion](https://www.npmjs.com/package/svelte-motion)   |
+| **@charmingdc/romanify** | Roman numeral converter.                             | [romanify](https://www.npmjs.com/package/@charmingdc/romanify) |
+| **Hugeicons**            | Free and open-source icon library.                   | [Hugeicons](https://hugeicons.com/)                            |
 
 ## Author Info
 
-**Adebayo Muis**
-A passionate and detail-oriented Frontend Engineer dedicated to crafting high-performance, user-centric web experiences.
+- **Name**: Adebayo Muis (Charmingdc)
+- **GitHub**: [@Charmingdc](https://github.com/Charmingdc)
+- **X (formerly Twitter)**: [@Charmingdc01](https://x.com/Charmingdc01)
+- **Email**: charmingdc002@gmail.com
+- **Myhappr**: [@muis](https://myhappr.xyz/muis)
 
-*   **GitHub**: [@Charmingdc](https://github.com/Charmingdc)
-*   **LinkedIn**: [@adebayomuis](https://linkedin.com/in/adebayomuis)
-*   **X (formerly Twitter)**: [@Charmingdc01](https://x.com/Charmingdc01)
+## Badges
 
----
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Svelte](https://img.shields.io/badge/svelte-%23F74B00.svg?style=for-the-badge&logo=svelte&logoColor=white)
+![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindCSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
 [![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
