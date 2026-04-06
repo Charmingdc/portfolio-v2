@@ -4,17 +4,21 @@
 
 @layer base {
 	:root {
+		--foreground: 235 235 235;
+		--background: 12 12 12;
+		--border: 120 120 120;
+	}
+
+	.dark {
+		--foreground: 235 235 235;
+		--background: 12 12 12;
+		--border: 120 120 120;
+	}
+
+	.light {
 		--foreground: 20 20 20;
 		--background: 254 254 254;
 		--border: 180 180 180;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--foreground: 235 235 235;
-			--background: 12 12 12;
-			--border: 120 120 120;
-		}
 	}
 
 	html {
