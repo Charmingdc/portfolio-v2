@@ -7,7 +7,7 @@
 	import { HugeiconsIcon } from '@hugeicons/svelte';
 	import { NewTwitterIcon, Mail01Icon, GithubIcon, SmileIcon } from '@hugeicons/core-free-icons';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
-	import favicon from '$lib/assets/favicon.svg';
+
 	import '../app.css';
 
 	let { children } = $props();
@@ -62,7 +62,7 @@
 
 <svelte:head>
 	<title>Adebayo Muis | {displayTitle()}</title>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 
 	<meta name="theme-color" content={theme.value === 'light' ? '#fefefe' : '#0c0c0c'} />
 </svelte:head>
