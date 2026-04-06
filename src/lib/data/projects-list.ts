@@ -33,5 +33,40 @@ export const PROJECTS: Project[] = [
 			'SafeWords is a privacy-first utility engineered to give users absolute control over their sensitive data through local-only cryptographic operations.',
 		githubRepo: 'SafeWords',
 		liveUrl: 'https://safewords.vercel.app'
+	},
+	{
+		name: 'MindEcho',
+		description:
+			'MindEcho is a mental health companion designed to help users track emotional trends and engage in positive mental health practices.',
+		githubRepo: 'MindEcho',
+		liveUrl: 'https://mindecho-six.vercel.app'
+	},
+	{
+		name: 'BookQuest',
+		description:
+			'BookQuest is a modern platform that streamlines book discovery, allowing users to explore curated genres and manage personal favorites.',
+		githubRepo: 'BookQuest',
+		liveUrl: 'https://bookquest-eosin.vercel.app'
+	},
+	{
+		name: 'Romanify',
+		description:
+			'Romanify is a lightweight TypeScript library built for programmatic conversion of integers into Roman numerals with support for large values.',
+		githubRepo: 'Romanify',
+		liveUrl: 'https://romanify.vercel.app'
+	},
+	{
+		name: 'Thryve',
+		description:
+			'Thryve is a mindfulness-focused app designed to encourage daily gratitude through gamified tracking and interactive progress visualization.',
+		githubRepo: 'Thryve',
+		liveUrl: 'https://thryve-alpha.vercel.app'
+	},
+	{
+		name: 'SwiftScan',
+		description:
+			'SwiftScan is an open-source utility designed for speed and accessibility, allowing users to generate and export QR codes instantly.',
+		githubRepo: 'SwiftScan',
+		liveUrl: 'https://swiftscan-delta.vercel.app'
 	}
 ];
