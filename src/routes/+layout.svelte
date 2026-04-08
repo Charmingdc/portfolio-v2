@@ -43,7 +43,7 @@
 	const displayTitle = $derived(() => {
 		const segment = page.url.pathname.split('/').filter(Boolean).pop();
 
-		if (!segment) return 'Home';
+		if (!segment) return 'Frontend Engineer';
 		return segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
 	});
 
