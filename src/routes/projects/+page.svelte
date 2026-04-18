@@ -26,7 +26,6 @@
 				<div class="flex flex-col gap-2">
 					<p class="text-foreground/70">{description}</p>
 
-					,
 					<div class="flex items-center gap-5">
 						<a
 							href={resolve('/projects/[slug]', { slug })}
