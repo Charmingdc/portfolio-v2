@@ -2,6 +2,7 @@
 	import { Motion, AnimatePresence } from 'svelte-motion';
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import { theme } from '$lib/theme.svelte';
 	import { romanize } from '@charmingdc/romanify';
 	import { HugeiconsIcon } from '@hugeicons/svelte';
@@ -61,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<title>Adebayo Muis | {displayTitle()}</title>
+	<title>Muis | {displayTitle()}</title>
 	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 
 	<meta name="theme-color" content={theme.value === 'light' ? '#fefefe' : '#0c0c0c'} />
@@ -81,10 +82,10 @@
 				<nav>
 					<div class="w-full flex items-center justify-between mb-14">
 						<ul class="flex items-center gap-3">
-							{#each navLinks as { label, path }}
+							{#each navLinks as { label, path } (path)}
 								<li>
 									<a
-										href={path}
+										href={resolve(path)}
 										class="text-foreground {path === page.url.pathname
 											? 'font-semibold'
 											: 'text-foreground/50'}"
@@ -97,10 +98,10 @@
 						</ul>
 
 						<ul class="flex items-center gap-3">
-							{#each socials as { icon, link, platform }}
+							{#each socials as { icon, link, platform } (link)}
 								<li>
 									<a
-										href={link}
+										href={resolve(link)}
 										title={`Go to ${platform}`}
 										target="_blank"
 										class="text-foreground/50 transition-colors hover:text-foreground"

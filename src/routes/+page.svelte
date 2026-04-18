@@ -15,7 +15,7 @@
 		<h2 id="about-heading">About</h2>
 
 		<div class="flex flex-col gap-3">
-			{#each SITE_DATA.about as aboutParagraph}
+			{#each SITE_DATA.about as aboutParagraph (aboutParagraph)}
 				<p>{aboutParagraph}</p>
 			{/each}
 		</div>
@@ -29,7 +29,7 @@
 		<h2 id="tools-heading">Tools</h2>
 
 		<div class="flex flex-wrap gap-2 text-foreground/50">
-			{#each SITE_DATA.tools as tool}
+			{#each SITE_DATA.tools as tool (tool)}
 				<span>{tool}</span>
 			{/each}
 		</div>
@@ -43,7 +43,7 @@
 		<h2 id="interests-heading">Interests</h2>
 
 		<div class="flex flex-col gap-3">
-			{#each SITE_DATA.interest as interestParagraph}
+			{#each SITE_DATA.interest as interestParagraph (interestParagraph)}
 				<p>{interestParagraph}</p>
 			{/each}
 		</div>

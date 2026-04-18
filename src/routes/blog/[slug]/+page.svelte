@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { HugeiconsIcon } from '@hugeicons/svelte';
 	import { ArrowLeft02Icon } from '@hugeicons/core-free-icons';
 	import type { ContentItem } from 'skriplet';
@@ -19,7 +20,7 @@
 <main class="w-full min-h-[72vh] flex flex-col gap-6 md:px-0">
 	<div class="w-full md:grid md:grid-cols-[150px_1fr] md:gap-10 md:items-start">
 		<a
-			href="/blog"
+			href={resolve('/blog')}
 			class="flex items-center gap-1 text-foreground/50 mb-4 md:mb-0 md:self-start"
 			data-sveltekit-preload-code
 		>
@@ -38,7 +39,7 @@
 
 			{#if data.post.data.tags?.length}
 				<div class="flex flex-wrap gap-2 text-sm text-foreground/60">
-					{#each data.post.data.tags as tag}
+					{#each data.post.data.tags as tag (tag)}
 						<span>#{tag}</span>
 					{/each}
 				</div>

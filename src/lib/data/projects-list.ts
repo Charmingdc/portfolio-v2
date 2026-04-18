@@ -1,5 +1,6 @@
 export interface Project {
 	name: string;
+	slug: string;
 	description: string;
 	githubRepo?: string;
 	liveUrl: string;
@@ -8,6 +9,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
 	{
 		name: 'ScrollJs',
+		slug: 'scrolljs',
 		description:
 			'ScrollJs is a performance-first library designed for developers who need powerful scroll-triggered animations without the bloat of larger frameworks.',
 		githubRepo: 'ScrollJs',
@@ -15,6 +17,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'Postmorph',
+		slug: 'postmorph',
 		description:
 			'Postmorph is a cutting-edge platform designed to revolutionize content workflows. It leverages advanced AI to transform existing content from sources like YouTube, TikTok, and blogs into tailored formats for different platforms',
 		githubRepo: 'Postmorph',
@@ -22,6 +25,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'Emojinary',
+		slug: 'emojinary',
 		description:
 			'Emojinary is a full-stack puzzle game that combines AI-driven logic with engaging gameplay to challenge cognitive skills through interactive emoji clues.',
 		githubRepo: 'Emojinary',
@@ -29,6 +33,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'SafeWords',
+		slug: 'safewords',
 		description:
 			'SafeWords is a privacy-first utility engineered to give users absolute control over their sensitive data through local-only cryptographic operations.',
 		githubRepo: 'SafeWords',
@@ -36,6 +41,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'MindEcho',
+		slug: 'mindecho',
 		description:
 			'MindEcho is a mental health companion designed to help users track emotional trends and engage in positive mental health practices.',
 		githubRepo: 'MindEcho',
@@ -43,6 +49,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'BookQuest',
+		slug: 'bookquest',
 		description:
 			'BookQuest is a modern platform that streamlines book discovery, allowing users to explore curated genres and manage personal favorites.',
 		githubRepo: 'BookQuest',
@@ -50,6 +57,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'Romanify',
+		slug: 'romanify',
 		description:
 			'Romanify is a lightweight TypeScript library built for programmatic conversion of integers into Roman numerals with support for large values.',
 		githubRepo: 'Romanify',
@@ -57,6 +65,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'Thryve',
+		slug: 'thryve',
 		description:
 			'Thryve is a mindfulness-focused app designed to encourage daily gratitude through gamified tracking and interactive progress visualization.',
 		githubRepo: 'Thryve',
@@ -64,6 +73,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'SwiftScan',
+		slug: 'swiftscan',
 		description:
 			'SwiftScan is an open-source utility designed for speed and accessibility, allowing users to generate and export QR codes instantly.',
 		githubRepo: 'SwiftScan',
