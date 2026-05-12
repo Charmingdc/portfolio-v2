@@ -8,6 +8,13 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
 	{
+		name: 'Myhappr',
+		slug: 'myhappr',
+		description:
+			'Myhappr is a creator support platform that allows you to receive tips globally and settle to your local banks (a buymeacoffee alternative) tailored for African & UK creators and expanding.',
+		liveUrl: 'https://myhappr.xyz'
+	},
+	{
 		name: 'ScrollJs',
 		slug: 'scrolljs',
 		description:

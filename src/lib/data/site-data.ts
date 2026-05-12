@@ -1,9 +1,16 @@
 import { PROJECTS, type Project } from './projects-list';
 
+interface CurrentProject {
+	name: string;
+	icon?: string;
+	link: string;
+}
+
 interface SiteData {
 	name: string;
 	githubUsername: string;
 	intro: string;
+	currentProject: CurrentProject;
 	about: string[];
 	tools: string[];
 	interest: string[];
@@ -15,6 +22,10 @@ export const SITE_DATA: SiteData = {
 	githubUsername: 'Charmingdc',
 	intro:
 		'Frontend Engineer, obsessed with building fast and optimized user interfaces that are not just beautiful but connect with users on every click and scroll.',
+	currentProject: {
+		name: 'Myhappr',
+		link: 'https://myhappr.xyz'
+	},
 	about: [
 		'I enjoy building interfaces that feel fast, intuitive, and alive. I’m fascinated by how things work and enjoy turning ideas into real, functional experiences.',
 		'With a background in technology and ongoing studies in mechatronics, I approach problems from first principles, exploring how software and hardware interact to create seamless experiences.',

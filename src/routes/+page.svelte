@@ -7,6 +7,15 @@
 
 	<p>{SITE_DATA.intro}</p>
 
+	<p class="w-full flex items-center gap-1">
+		Currently working on <a
+			href={SITE_DATA.currentProject.link}
+			target="_blank"
+			class="font-bold underline underline-offset-4 decoration-border"
+			>{SITE_DATA.currentProject.name}</a
+		>.
+	</p>
+
 	<!-- About -->
 	<article
 		class="w-full grid gap-3 md:gap-10 md:grid-cols-[minmax(150px,200px)_1fr]"

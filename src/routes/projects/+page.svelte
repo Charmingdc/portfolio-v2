@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	// import { resolve } from '$app/paths';
 	import { SITE_DATA } from '$lib/data/site-data';
 </script>
 
@@ -7,44 +7,26 @@
 	<h1 class="font-semibold text-xl">Projects</h1>
 
 	<div class="w-full flex flex-col gap-3">
-		{#each SITE_DATA.projects as { name, slug, description, githubRepo, liveUrl } (slug)}
-			<article
-				class="group w-full grid gap-3 md:gap-10 md:grid-cols-[minmax(180px,260px)_1fr] py-5 md:py-4 md:border-b border-border/40 transition-colors duration-200 md:hover:bg-foreground/5"
-				aria-labelledby={`project-${name}`}
+		{#each SITE_DATA.projects as { name, slug, description, liveUrl } (slug)}
+			<a
+				href={String(liveUrl)}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="outline-none focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm"
 			>
-				<h2 id={`project-${name}`}>
-					<a
-						href={resolve(liveUrl)}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="outline-none focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm"
-					>
+				<article
+					class="group w-full grid gap-3 md:gap-10 md:grid-cols-[minmax(180px,260px)_1fr] py-5 md:py-4 border-b border-border/40 transition-all duration-200 hover:border-l-4 hover:pl-2 hover:pt-2 md:hover:bg-foreground/5"
+					aria-labelledby={`project-${name}`}
+				>
+					<h2 id={`project-${name}`}>
 						{name}
-					</a>
-				</h2>
+					</h2>
 
-				<div class="flex flex-col gap-2">
-					<p class="text-foreground/70">{description}</p>
-
-					<div class="flex items-center gap-5">
-						<a
-							href={resolve('/projects/[slug]', { slug })}
-							class="flex items-center gap-1 text-foreground/60 underline underline-offset-4 transition-colors group-hover:text-foreground focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm w-fit"
-						>
-							See overview
-						</a>
-
-						<a
-							href={`https://github.com/${SITE_DATA.githubUsername}/${githubRepo}`}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="flex items-center gap-1 text-foreground/60 underline underline-offset-4 transition-colors group-hover:text-foreground focus-visible:ring-1 focus-visible:ring-foreground/40 rounded-sm w-fit"
-						>
-							View source code
-						</a>
+					<div class="flex flex-col gap-2">
+						<p class="text-foreground/70">{description}</p>
 					</div>
-				</div>
-			</article>
+				</article>
+			</a>
 		{/each}
 	</div>
 </main>

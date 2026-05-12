@@ -48,11 +48,33 @@
 		return segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
 	});
 
-	let socials = $state([
-		{ icon: NewTwitterIcon, link: 'https://x.com/Charmingdc01', platform: 'X (formerly twitter)' },
-		{ icon: Mail01Icon, link: 'mailto:charmingdc002@gmail.com', platform: 'Gmail' },
-		{ icon: GithubIcon, link: 'https://github.com/Charmingdc', platform: 'Github' },
-		{ icon: SmileIcon, link: 'https://myhappr.xyz/muis', platform: 'Myhappr' }
+	type Social = {
+		icon: typeof NewTwitterIcon;
+		link: string;
+		platform: string;
+	};
+
+	let socials = $state<Social[]>([
+		{
+			icon: NewTwitterIcon,
+			link: 'https://x.com/Charmingdc01',
+			platform: 'X (formerly twitter)'
+		},
+		{
+			icon: Mail01Icon,
+			link: 'mailto:charmingdc002@gmail.com',
+			platform: 'Gmail'
+		},
+		{
+			icon: GithubIcon,
+			link: 'https://github.com/Charmingdc',
+			platform: 'Github'
+		},
+		{
+			icon: SmileIcon,
+			link: 'https://myhappr.xyz/muis',
+			platform: 'Myhappr'
+		}
 	]);
 
 	const variants = {
@@ -101,7 +123,7 @@
 							{#each socials as { icon, link, platform } (link)}
 								<li>
 									<a
-										href={resolve(link)}
+										href={link}
 										title={`Go to ${platform}`}
 										target="_blank"
 										class="text-foreground/50 transition-colors hover:text-foreground"
