@@ -22,6 +22,8 @@
 						{name}
 					</h2>
 
+					<h3 class="font-mono font-light text-xs lowercase -mt-1">{new URL(liveUrl).origin}</h3>
+
 					<div class="flex flex-col gap-2">
 						<p class="text-foreground/70">{description}</p>
 					</div>

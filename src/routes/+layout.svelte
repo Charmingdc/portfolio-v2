@@ -110,7 +110,7 @@
 										href={resolve(path)}
 										class="text-foreground {path === page.url.pathname
 											? 'font-semibold'
-											: 'text-foreground/50'}"
+											: 'text-foreground/65'}"
 										data-sveltekit-preload-code
 									>
 										{label}
@@ -126,7 +126,7 @@
 										href={link}
 										title={`Go to ${platform}`}
 										target="_blank"
-										class="text-foreground/50 transition-colors hover:text-foreground"
+										class="text-foreground/65 transition-colors hover:text-foreground"
 									>
 										<HugeiconsIcon {icon} size={14} strokeWidth={2} />
 									</a>
@@ -141,7 +141,7 @@
 				</main>
 
 				<footer
-					class="w-full flex md:hidden items-center justify-center lowercase text-foreground/50 bg-background py-5 mt-16 -mb-5"
+					class="w-full flex md:hidden items-center justify-center lowercase text-foreground/65 bg-background py-5 mt-16 -mb-5"
 				>
 					© {romanize(new Date().getFullYear())} adebayo muis.
 				</footer>

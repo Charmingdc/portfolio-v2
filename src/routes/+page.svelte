@@ -11,7 +11,7 @@
 		Currently working on <a
 			href={SITE_DATA.currentProject.link}
 			target="_blank"
-			class="font-bold underline underline-offset-4 decoration-border"
+			class="font-bold text-foreground/75 underline underline-offset-4 decoration-border"
 			>{SITE_DATA.currentProject.name}</a
 		>.
 	</p>
@@ -37,7 +37,7 @@
 	>
 		<h2 id="tools-heading">Tools</h2>
 
-		<div class="flex flex-wrap gap-2 text-foreground/50">
+		<div class="flex flex-wrap gap-2 text-foreground/65">
 			{#each SITE_DATA.tools as tool (tool)}
 				<span>{tool}</span>
 			{/each}
