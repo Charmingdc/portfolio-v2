@@ -1,6 +1,7 @@
 export interface Project {
 	name: string;
 	slug: string;
+	imageurl: string;
 	description: string;
 	githubRepo?: string;
 	liveUrl: string;
@@ -10,80 +11,54 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'Myhappr',
 		slug: 'myhappr',
+		imageurl: '',
 		description:
-			'Myhappr is a creator support platform that allows you to receive tips globally and settle to your local banks (a buymeacoffee alternative) tailored for African & UK creators and expanding.',
-		liveUrl: 'https://myhappr.xyz'
-	},
-	{
-		name: 'ScrollJs',
-		slug: 'scrolljs',
-		description:
-			'ScrollJs is a performance-first library designed for developers who need powerful scroll-triggered animations without the bloat of larger frameworks.',
-		githubRepo: 'ScrollJs',
-		liveUrl: 'https://www.npmjs.com/package/@charmingdc/scrolljs'
+			'Creator support platform for receiving global tips and settling payments directly to local bank accounts.',
+		liveUrl: 'https://myhappr.com'
 	},
 	{
 		name: 'Postmorph',
 		slug: 'postmorph',
+		imageurl: '',
 		description:
-			'Postmorph is a cutting-edge platform designed to revolutionize content workflows. It leverages advanced AI to transform existing content from sources like YouTube, TikTok, and blogs into tailored formats for different platforms',
+			'AI-powered content repurposing platform for transforming videos, articles, and other content into platform-ready formats.',
 		githubRepo: 'Postmorph',
 		liveUrl: 'https://postmorph.vercel.app'
 	},
 	{
+		name: 'Glint',
+		slug: 'glint',
+		imageurl: '',
+		description:
+			'Deterministic gradient avatar generator for creating lightweight, customizable avatars from seeds or initials.',
+		githubRepo: 'Glint',
+		liveUrl: 'https://glint-dev.vercel.app'
+	},
+	{
+		name: 'ScrollJs',
+		slug: 'scrolljs',
+		imageurl: '',
+		description:
+			'Performance-first animation library for building lightweight scroll-triggered effects without unnecessary framework overhead.',
+		githubRepo: 'ScrollJs',
+		liveUrl: 'https://www.npmjs.com/package/@charmingdc/scrolljs'
+	},
+	{
 		name: 'Emojinary',
 		slug: 'emojinary',
+		imageurl: '',
 		description:
-			'Emojinary is a full-stack puzzle game that combines AI-driven logic with engaging gameplay to challenge cognitive skills through interactive emoji clues.',
+			'AI-powered puzzle game combining interactive emoji clues with logic-based challenges for an engaging cognitive experience.',
 		githubRepo: 'Emojinary',
 		liveUrl: 'https://funemojinary.vercel.app'
 	},
 	{
 		name: 'SafeWords',
 		slug: 'safewords',
+		imageurl: '',
 		description:
-			'SafeWords is a privacy-first utility engineered to give users absolute control over their sensitive data through local-only cryptographic operations.',
+			'Privacy-first utility for managing sensitive information through local-only cryptographic operations with no server storage.',
 		githubRepo: 'SafeWords',
 		liveUrl: 'https://safewords.vercel.app'
-	},
-	{
-		name: 'MindEcho',
-		slug: 'mindecho',
-		description:
-			'MindEcho is a mental health companion designed to help users track emotional trends and engage in positive mental health practices.',
-		githubRepo: 'MindEcho',
-		liveUrl: 'https://mindecho-six.vercel.app'
-	},
-	{
-		name: 'BookQuest',
-		slug: 'bookquest',
-		description:
-			'BookQuest is a modern platform that streamlines book discovery, allowing users to explore curated genres and manage personal favorites.',
-		githubRepo: 'BookQuest',
-		liveUrl: 'https://bookquest-eosin.vercel.app'
-	},
-	{
-		name: 'Romanify',
-		slug: 'romanify',
-		description:
-			'Romanify is a lightweight TypeScript library built for programmatic conversion of integers into Roman numerals with support for large values.',
-		githubRepo: 'Romanify',
-		liveUrl: 'https://romanify.vercel.app'
-	},
-	{
-		name: 'Thryve',
-		slug: 'thryve',
-		description:
-			'Thryve is a mindfulness-focused app designed to encourage daily gratitude through gamified tracking and interactive progress visualization.',
-		githubRepo: 'Thryve',
-		liveUrl: 'https://thryve-alpha.vercel.app'
-	},
-	{
-		name: 'SwiftScan',
-		slug: 'swiftscan',
-		description:
-			'SwiftScan is an open-source utility designed for speed and accessibility, allowing users to generate and export QR codes instantly.',
-		githubRepo: 'SwiftScan',
-		liveUrl: 'https://swiftscan-delta.vercel.app'
 	}
 ];

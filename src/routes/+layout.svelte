@@ -37,7 +37,6 @@
 
 	let navLinks = $state([
 		{ label: 'Home', path: '/' },
-		{ label: 'Projects', path: '/projects' },
 		{ label: 'Blog', path: '/blog' }
 	]);
 
@@ -53,29 +52,6 @@
 		link: string;
 		platform: string;
 	};
-
-	let socials = $state<Social[]>([
-		{
-			icon: NewTwitterIcon,
-			link: 'https://x.com/Charmingdc01',
-			platform: 'X (formerly twitter)'
-		},
-		{
-			icon: Mail01Icon,
-			link: 'mailto:charmingdc002@gmail.com',
-			platform: 'Gmail'
-		},
-		{
-			icon: GithubIcon,
-			link: 'https://github.com/Charmingdc',
-			platform: 'Github'
-		},
-		{
-			icon: SmileIcon,
-			link: 'https://myhappr.xyz/muis',
-			platform: 'Myhappr'
-		}
-	]);
 
 	const variants = {
 		visible: { opacity: 1, filter: 'blur(0px)' },
@@ -101,16 +77,18 @@
 			let:motion
 		>
 			<div class="transition-colors duration-200" use:motion>
-				<nav>
-					<div class="w-full flex items-center justify-between mb-14">
+				<nav class="w-full flex flex-col items-center">
+					<div
+						class="w-full max-w-2xl flex items-center justify-start mt-5 md:mt-12 mb-10 md:mb-14"
+					>
 						<ul class="flex items-center gap-3">
 							{#each navLinks as { label, path } (path)}
 								<li>
 									<a
 										href={resolve(path)}
-										class="text-foreground {path === page.url.pathname
-											? 'font-semibold'
-											: 'text-foreground/65'}"
+										class="relative text-foreground transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 {path === page.url.pathname
+											? 'font-semibold after:w-full'
+											: 'text-foreground/65 hover:text-foreground after:w-0 hover:after:w-full'}"
 										data-sveltekit-preload-code
 									>
 										{label}
@@ -118,30 +96,17 @@
 								</li>
 							{/each}
 						</ul>
-
-						<ul class="flex items-center gap-3">
-							{#each socials as { icon, link, platform } (link)}
-								<li>
-									<a
-										href={link}
-										title={`Go to ${platform}`}
-										target="_blank"
-										class="text-foreground/65 transition-colors hover:text-foreground"
-									>
-										<HugeiconsIcon {icon} size={14} strokeWidth={2} />
-									</a>
-								</li>
-							{/each}
-						</ul>
 					</div>
 				</nav>
 
-				<main>
-					{@render children()}
+				<main class="w-full flex justify-center">
+					<div class="w-full flex flex-col items-center max-w-2xl">
+						{@render children()}
+					</div>
 				</main>
 
 				<footer
-					class="w-full flex md:hidden items-center justify-center lowercase text-foreground/65 bg-background py-5 mt-16 -mb-5"
+					class="w-full flex items-center justify-center lowercase text-foreground/65 bg-background py-5 mt-16 -mb-5"
 				>
 					© {romanize(new Date().getFullYear())} adebayo muis.
 				</footer>

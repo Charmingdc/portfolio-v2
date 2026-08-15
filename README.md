@@ -1,90 +1,80 @@
 # Adebayo Muis's Personal Portfolio
 
-This project is my personal portfolio and blog, built to showcase my work as a frontend engineer, share my thoughts on various topics, and provide a clear overview of my skills and interests. It's a central hub where you can dive into my projects and read my latest articles without any fuss.
+A personal portfolio and blog that puts my work, writing, and current focus in one place. It solves the problem of having to bounce between different platforms to see what I'm about, you can browse my latest articles, explore projects, and grab my resume without leaving the page.
 
-## Installation
+## Overview
 
-Getting this project up and running on your local machine is pretty straightforward. Just follow these steps:
-
-1.  **Clone the Repository**:
-    First, you'll want to get a copy of the project files. Open your terminal and run:
-
-    ```bash
-    git clone git@github.com:Charmingdc/portfolio-v2
-    cd portfolio-v2
-    ```
-
-2.  **Install Dependencies**:
-    Once you're in the project directory, install all the necessary packages:
-
-    ```bash
-    npm install
-    ```
-
-3.  **Start the Development Server**:
-    To see the project in action, start the development server. This will compile the SvelteKit application and make it accessible in your browser, typically at `http://localhost:5173`.
-
-    ```bash
-    npm run dev
-    ```
-
-4.  **Build for Production (Optional)**:
-    If you want to create an optimized production build, you can use:
-
-    ```bash
-    npm run build
-    npm run preview # to preview the production build
-    ```
+This is the home for my writing and my work. It's meant to feel simple and fast, whether you're on a phone or a desktop. The site is split into three main areas: a homepage with an intro, a blog where I publish longer thoughts, and a projects section where I link to things I've built.
 
 ## Usage
 
-This portfolio is designed to be easily navigable, allowing visitors to explore different facets of my work and interests.
+### Browsing the site
 
-- **Home (`/`)**: This is where you'll find an introduction to who I am, what I'm currently working on, my technical tools, and my interests.
-- **Blog (`/blog`)**: Here, I share articles and insights on frontend engineering and other topics. You can browse through a list of posts and click on any title to read the full article.
-- **Projects (`/projects`)**: This section highlights the projects I've worked on, providing a glimpse into my practical skills and problem-solving approaches. You can click on a project to learn more about it.
-- **Theme Toggle**: You'll find a toggle in the bottom-right corner that lets you switch between dark and light themes, personalizing your viewing experience.
-- **Social Links**: In the top-right corner, there are links to my social profiles (X, GitHub, Email, Myhappr) if you want to connect.
+- `/` shows a quick intro, the tools I use, featured projects, and a link to download my resume.
+- `/blog` lists all published posts. Clicking a post opens the full article.
+- `/projects` lists the projects I've shared. Each one links out to its live version or repository.
+
+### Site controls
+
+- Use the toggle in the bottom right to switch between dark and light mode.
+- Use the icons in the top right or the social row on the homepage to reach me on X, GitHub, or email.
+
+### Running locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Then open `http://localhost:5173` in your browser.
+
+Create a production build and preview it:
+
+```bash
+npm run build
+npm run preview
+```
+
+### Content management
+
+Blog posts are plain markdown files stored in `content/blog`. Each file starts with frontmatter for the title, description, date, order, and tags. Projects are defined in a central site data file at `src/lib/data/site-data.ts`. That means adding a new blog post or project doesn't require touching the page components.
 
 ## Features
 
-Here's a quick rundown of what this portfolio offers:
-
-- **Dynamic Content Management**: Blog posts are managed dynamically using markdown files, making it easy to add and update content without touching the code.
-- **Responsive Design**: The entire site is built to look great and function perfectly on any device, from desktops to mobile phones.
-- **Dark/Light Theme**: Users can easily switch between a comfortable dark theme and a crisp light theme, based on their preference or system settings.
-- **Smooth Page Transitions**: Enjoy a fluid browsing experience with subtle, performant page transitions powered by `svelte-motion`.
-- **SEO Optimized**: The site includes comprehensive meta tags for improved search engine visibility and better social media sharing previews.
-- **Modern Frontend Stack**: Leverages the latest features of SvelteKit and TypeScript for a robust and maintainable codebase.
+- **Markdown-powered blog**: Write posts as markdown and they automatically appear on the blog list and detail pages.
+- **Dark and light themes**: A theme toggle saves the visitor's preference and respects the system default on first visit.
+- **Responsive layout**: The interface adapts from small phones to large desktops without losing readability.
+- **SEO and social previews**: Meta tags, Open Graph, Twitter cards, canonical links, and JSON-LD structured data are included by default.
+- **Smooth transitions**: Page changes use subtle blur and fade animations to keep navigation feeling fluid.
+- **Accessible markup**: Semantic HTML, aria labels, and keyboard-visible focus states are built into the components.
+- **Fast preloading**: Navigation links preload code and data on hover, so pages open quickly.
+- **Type-safe content**: Blog and project data are typed with TypeScript to catch mismatches early.
 
 ## Technologies Used
 
-This project is built using a modern and efficient set of technologies:
-
-| Technology        | Description                                                                                |
-| :---------------- | :----------------------------------------------------------------------------------------- |
-| **SvelteKit**     | A powerful framework for building web applications with Svelte.                            |
-| **Svelte**        | A reactive component framework that compiles code into tiny, vanilla JavaScript.           |
-| **TypeScript**    | A typed superset of JavaScript that compiles to plain JavaScript.                          |
-| **Tailwind CSS**  | A utility-first CSS framework for rapidly building custom designs.                         |
-| **Vite**          | A next-generation frontend tooling that provides an extremely fast development experience. |
-| **ESLint**        | A pluggable linting utility for JavaScript and TypeScript.                                 |
-| **Prettier**      | An opinionated code formatter.                                                             |
-| **Vercel**        | Platform for frontend developers, enabling instant deployments.                            |
-| **Skriplet**      | A content collection utility for SvelteKit.                                                |
-| **Svelte-Motion** | A simple, declarative motion library for Svelte, inspired by Framer Motion.                |
+| Technology | Purpose |
+| --- | --- |
+| [SvelteKit](https://kit.svelte.dev/) | Application framework and routing |
+| [Svelte](https://svelte.dev/) | Reactive UI components |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety across components and data |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
+| [Vite](https://vitejs.dev/) | Build tooling and dev server |
+| [Svelte-Motion](https://www.npmjs.com/package/svelte-motion) | Declarative animations and transitions |
+| [Skriplet](https://www.npmjs.com/package/skriplet) | Markdown-based content collection |
+| [Hugeicons](https://hugeicons.com/) | Icon set used in the UI |
+| [ESLint](https://eslint.org/) | Linting |
+| [Prettier](https://prettier.io/) | Code formatting |
+| [Vercel](https://vercel.com/) | Deployment and hosting |
 
 ## Author Info
 
-You can find me, Adebayo Muis, around the web:
+- GitHub: [Charmingdc](https://github.com/Charmingdc)
+- X (Twitter): [@charmingdc01](https://x.com/charmingdc01)
+- LinkedIn: [Adebayo Muis](https://linkedin.com/in/adebayo-muis)
+- Email: [charmingdc002@gmail.com](mailto:charmingdc002@gmail.com)
 
-- **GitHub**: [@Charmingdc](https://github.com/Charmingdc)
-- **X (Twitter)**: [@yourhandle](https://x.com/yourhandle)
-- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yourusername)
-- **Email**: charmingdc002@gmail.com
-- **Myhappr**: [Adebayo Muis on Myhappr](https://myhappr.xyz/muis)
-
----
+## Badges
 
 [![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://kit.svelte.dev/)
 [![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/)
@@ -93,4 +83,4 @@ You can find me, Adebayo Muis, around the web:
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
+[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://dokugen.samueltuoyo.com)
