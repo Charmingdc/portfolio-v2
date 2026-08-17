@@ -7,18 +7,21 @@
 		--foreground: 245 245 255;
 		--background: 16 16 16;
 		--border: 120 120 120;
+		--text-muted: 161 161 170;
 	}
 
 	.dark {
-		--foreground: 245 245 255;
-		--background: 16 16 16;
-		--border: 100 100 100;
+		--foreground: 250 250 250;
+		--background: 10 10 10;
+		--border: 39 39 42;
+		--text-muted: 161 161 170;
 	}
 
 	.light {
 		--foreground: 20 20 20;
 		--background: 254 254 254;
 		--border: 180 180 180;
+		--text-muted: 113 113 122;
 	}
 
 	html {
@@ -45,4 +48,14 @@
 	p {
 		@apply text-foreground/65;
 	}
+}
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 }

@@ -12,7 +12,8 @@ export default {
 			colors: {
 				foreground: 'rgb(var(--foreground) / <alpha-value>)',
 				background: 'rgb(var(--background) / <alpha-value>)',
-				border: 'rgb(var(--border) / <alpha-value>)'
+				border: 'rgb(var(--border) / <alpha-value>)',
+				muted: 'rgb(var(--text-muted) / <alpha-value>)'
 			}
 		}
 	},

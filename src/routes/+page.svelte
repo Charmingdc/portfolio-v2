@@ -1,123 +1,222 @@
 <script lang="ts">
 	import { HugeiconsIcon } from '@hugeicons/svelte';
 	import {
-		NewTwitterIcon,
-		Mail01Icon,
+		LinkSquare01Icon,
+		CodeIcon,
 		GithubIcon,
-		LinkSquare01Icon
+		NewTwitterIcon,
+		File01Icon
 	} from '@hugeicons/core-free-icons';
 
 	import { SITE_DATA } from '$lib/data/site-data';
+	import { onMount } from 'svelte';
 
-	type Social = {
-		icon: typeof NewTwitterIcon;
-		link: string;
-		platform: string;
-	};
+	let spotifyData = $state({
+		isPlaying: false,
+		title: 'Not playing',
+		artist: 'Spotify',
+		albumImageUrl: '',
+		songUrl: ''
+	});
 
-	let socials = $state<Social[]>([
-		{
-			icon: NewTwitterIcon,
-			link: 'https://x.com/Charmingdc01',
-			platform: 'X (formerly twitter)'
-		},
-		{
-			icon: Mail01Icon,
-			link: 'mailto:charmingdc002@gmail.com',
-			platform: 'Gmail'
-		},
-		{
-			icon: GithubIcon,
-			link: 'https://github.com/Charmingdc',
-			platform: 'Github'
+	onMount(async () => {
+		try {
+			const res = await fetch('/api/spotify');
+			if (res.ok) {
+				spotifyData = await res.json();
+			}
+		} catch (e) {
+			console.error(e);
 		}
-	]);
+	});
 </script>
 
-<main id="about-page" class="w-full flex flex-col gap-8 md:gap-10 [&_h2]:mt-6 md:[&_h2]:mt-0">
-	<h1 class="text-3xl md:text-4xl">{SITE_DATA.name}</h1>
-	<p class="-mt-4 md:-mt-6">{SITE_DATA.intro}</p>
-
-	<p class="w-full flex items-center gap-1 -mt-4 md:-mt-6">
-		Currently working on <a
-			href={SITE_DATA.currentProject.link}
-			target="_blank"
-			class="font-bold text-foreground/75 underline underline-offset-4 decoration-border decoration-2 hover:text-foreground hover:decoration-foreground transition-all duration-300"
-			>{SITE_DATA.currentProject.name}</a
-		>.
-	</p>
-
-	<!-- Socials -->
-	<article
-		class="w-full flex items-center justify-start gap-5 md:-mt-2"
-		aria-labelledby="socials-heading"
+<main id="about-page" class="w-full flex flex-col gap-8 md:gap-14 pb-10">
+	<!-- Hero Section -->
+	<header
+		class="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-6 md:gap-0 mt-6 md:mt-0"
 	>
-		<a
-			href="/resume.pdf"
-			download="Adebayo-Muis-Resume.pdf"
-			class="w-fit bg-border/10 py-2 px-5 border border-border/30 rounded hover:bg-border/30 hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:scale-95 transition-all duration-300"
-		>
-			Resume
-		</a>
-
-		<ul class="flex items-center gap-4">
-			{#each socials as { icon, link, platform } (link)}
-				<li>
-					<a
-						href={link}
-						title={`Go to ${platform}`}
-						target="_blank"
-						class="inline-block text-foreground/65 hover:text-foreground hover:scale-110 hover:-translate-y-1 active:scale-95 transition-all duration-300"
-					>
-						<HugeiconsIcon {icon} size={18} strokeWidth={2} />
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</article>
-
-	<!-- Tech stacks -->
-	<article class="w-full flex flex-col gap-2" aria-labelledby="tech-stacks">
-		<h2 id="tools-heading">Tech stacks</h2>
-
-		<div class="flex flex-wrap gap-2 text-foreground/65">
-			{#each SITE_DATA.tools as tool (tool)}
-				<span
-					class="w-fit py-1 px-2 border border-border/50 rounded hover:bg-border/20 hover:border-foreground/30 hover:-translate-y-0.5 transition-all duration-300 cursor-default"
-					>{tool}</span
+		<div class="flex flex-col gap-4 w-full md:max-w-xl mb-6">
+			<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
+				Hey, I'm {SITE_DATA.name.replace('.', '')} — an engineer
+			</h1>
+			<p class="text-xl md:text-2xl text-muted font-medium max-w-md">{SITE_DATA.intro}</p>
+			<div class="flex flex-wrap items-center gap-3 mt-2">
+				<a
+					href="/resume.pdf"
+					download="Adebayo_Muis_Resume.pdf"
+					class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-border/30
+					hover:bg-border/10 text-sm font-bold transition-colors"
 				>
-			{/each}
+					<HugeiconsIcon icon={File01Icon} size={16} /> Resume
+				</a>
+				<a
+					href="https://github.com/{SITE_DATA.githubUsername}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-border/30 hover:bg-border/10 text-sm font-bold transition-colors"
+				>
+					<HugeiconsIcon icon={GithubIcon} size={16} /> GitHub
+				</a>
+				<a
+					href="https://x.com/{SITE_DATA.xUsername}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-border/30 hover:bg-border/10 text-sm font-bold transition-colors"
+				>
+					<HugeiconsIcon icon={NewTwitterIcon} size={16} /> Twitter
+				</a>
+			</div>
 		</div>
-	</article>
+		<!-- Circular PFP - hidden on mobile, visible on md+ -->
+		<div
+			class="hidden md:flex w-[6rem] h-[6rem] md:w-[8.5rem] md:h-[8.5rem] rounded-full overflow-hidden bg-border/20 items-center justify-center shrink-0 border border-border/30 -mt-10"
+		>
+			<!-- Image placeholder API -->
+			<img
+				src="https://glint-dev.vercel.app/api/avatar?seed=charmingdc"
+				alt="Profile"
+				class="w-full h-full object-cover"
+			/>
+		</div>
+	</header>
 
-	<!-- Projects -->
-	<article class="w-full flex flex-col gap-2" aria-labelledby="tech-stacks">
-		<h2 id="tools-heading">Projects</h2>
-
-		<div class="flex flex-wrap gap-11 text-foreground/65">
-			{#each SITE_DATA.projects as { name, slug, description, liveUrl } (slug)}
-				<div class="w-full md:max-w-[19rem] flex flex-col items-center gap-3">
-					<a
-						href={String(liveUrl)}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group w-full flex items-center justify-between"
-					>
-						<strong
-							class="text-[1.08rem] group-hover:text-foreground transition-colors duration-300"
-							>{name}</strong
-						>
-
-						<span
-							class="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 text-foreground/65 group-hover:text-foreground"
-						>
-							<HugeiconsIcon icon={LinkSquare01Icon} size={16} />
-						</span>
-					</a>
-
-					<p>{description}</p>
+	<!-- Content Grid (2 columns on md to lg) -->
+	<div class="w-full flex flex-col md:grid md:grid-cols-[1fr_1fr] gap-6">
+		<!-- Left Column: Building, Tech stack -->
+		<div class="flex flex-col gap-6 max-md:contents">
+			<!-- Building -->
+			<div
+				class="order-1 md:order-none border-2 border-border/30 rounded-2xl px-2.5 py-3 md:p-5 relative flex flex-col justify-center"
+			>
+				<div
+					class="absolute -top-[13px] left-5 py-[0.15rem] px-3 text-sm font-bold bg-background rounded-full border-2 border-border/30 text-foreground"
+				>
+					Building
 				</div>
-			{/each}
+				<div class="flex items-center gap-4 mt-2">
+					<div
+						class="w-10 h-10 rounded-md bg-border/20 flex items-center justify-center text-muted"
+					>
+						<HugeiconsIcon icon={LinkSquare01Icon} size={20} />
+					</div>
+					<div class="flex flex-col">
+						<span class="font-bold text-[0.95rem]">{SITE_DATA.currentProject.name}</span>
+						<a
+							href={SITE_DATA.currentProject.link}
+							target="_blank"
+							class="text-xs text-muted hover:text-foreground transition-colors underline decoration-border/50"
+							>View Project</a
+						>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tech Stacks -->
+			<div
+				class="order-3 md:order-none border-2 border-border/30 rounded-2xl px-2.5 py-3 md:p-5 relative h-[400px] md:h-[300px] lg:h-[350px] flex flex-col"
+			>
+				<div
+					class="absolute -top-[13px] left-5 py-[0.15rem] px-3 text-sm font-bold bg-background rounded-full border-2 border-border/30 text-foreground"
+				>
+					Tech stacks
+				</div>
+				<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+				<div
+					class="flex-1 overflow-y-auto mt-2 scrollbar-hide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border/50 rounded-md"
+					tabindex="0"
+					role="region"
+					aria-label="Tech stacks list"
+				>
+					<div class="flex flex-col ml-3 mt-1 border-l border-border/30 pb-2">
+						{#each SITE_DATA.tools as tool (tool.name)}
+							<div class="relative pl-8 py-3">
+								<div
+									class="absolute -left-[13px] top-[14px] w-8 h-8 rounded-md bg-background border border-border/30 flex items-center justify-center text-muted"
+								>
+									<HugeiconsIcon icon={CodeIcon} size={12} />
+								</div>
+								<div class="flex flex-col -mt-0.5">
+									<span class="text-sm font-medium text-foreground/80">{tool.name}</span>
+									<span class="text-xs text-muted">{tool.description}</span>
+								</div>
+							</div>
+						{/each}
+					</div>
+				</div>
+			</div>
 		</div>
-	</article>
+
+		<!-- Right Column: Music, Projects -->
+		<div class="flex flex-col gap-6 max-md:contents">
+			<!-- Music -->
+			<div
+				class="order-2 md:order-none border-2 border-border/30 rounded-2xl px-2.5 py-3 md:p-5 relative flex flex-col justify-center"
+			>
+				<div
+					class="absolute -top-[13px] left-5 py-[0.15rem] px-3 text-sm font-bold bg-background rounded-full border-2 border-border/30 text-foreground"
+				>
+					Music
+				</div>
+				<div class="flex items-center gap-4 mt-2">
+					{#if spotifyData.albumImageUrl}
+						<img
+							src={spotifyData.albumImageUrl}
+							alt="Album cover"
+							class="w-12 h-12 rounded-md object-cover"
+						/>
+					{:else}
+						<div
+							class="w-12 h-12 rounded-md bg-border/20 flex items-center justify-center animate-pulse"
+						></div>
+					{/if}
+
+					<div class="flex flex-col">
+						<span class="font-bold text-[0.95rem] line-clamp-1">{spotifyData.title}</span>
+						<span class="text-xs text-muted line-clamp-1">{spotifyData.artist}</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Projects -->
+			<div
+				class="order-4 md:order-none border-2 border-border/30 rounded-2xl px-2.5 py-3 md:p-5 relative h-[400px] md:h-[300px] lg:h-[350px] flex flex-col"
+			>
+				<div
+					class="absolute -top-[13px] left-5 py-[0.15rem] px-3 text-sm font-bold bg-background rounded-full border-2 border-border/30 text-foreground"
+				>
+					Projects
+				</div>
+				<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+				<div
+					class="flex-1 overflow-y-auto mt-2 scrollbar-hide flex flex-col gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border/50 rounded-md"
+					tabindex="0"
+					role="region"
+					aria-label="Projects list"
+				>
+					{#each SITE_DATA.projects as project (project.name)}
+						<a
+							href={project.liveUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex items-center gap-4 px-2 py-3 hover:bg-border/10 rounded-lg transition-colors group"
+						>
+							<div
+								class="w-10 h-10 rounded-md bg-border/20 flex items-center justify-center text-muted shrink-0"
+							>
+								<HugeiconsIcon icon={LinkSquare01Icon} size={20} />
+							</div>
+							<div class="flex flex-col">
+								<span
+									class="font-bold text-[0.95rem] group-hover:text-foreground/90 transition-colors line-clamp-1"
+									>{project.name}</span
+								>
+								<span class="text-xs text-muted line-clamp-1">{project.description}</span>
+							</div>
+						</a>
+					{/each}
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
