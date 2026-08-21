@@ -11,7 +11,7 @@
 	import { SITE_DATA } from '$lib/data/site-data';
 	import { onMount } from 'svelte';
 
-	let spotifyData = $state({
+	let nowPlaying = $state({
 		isPlaying: false,
 		title: 'Not playing',
 		artist: 'Spotify',
@@ -19,11 +19,15 @@
 		songUrl: ''
 	});
 
+	// Stays false until the first successful fetch, so the label reads "Music" on load.
+	let loaded = $state(false);
+
 	onMount(async () => {
 		try {
-			const res = await fetch('/api/spotify');
+			const res = await fetch('/api/now-playing');
 			if (res.ok) {
-				spotifyData = await res.json();
+				nowPlaying = await res.json();
+				loaded = true;
 			}
 		} catch (e) {
 			console.error(e);
@@ -74,7 +78,7 @@
 		>
 			<!-- Image placeholder API -->
 			<img
-				src="https://glint-dev.vercel.app/api/avatar?seed=charmingdc"
+				src="https://glint-dev.vercel.app/api/avatar?seed=charmingdc&size=500"
 				alt="Profile"
 				class="w-full h-full object-cover"
 			/>
@@ -95,11 +99,11 @@
 					Building
 				</div>
 				<div class="flex items-center gap-4 mt-2">
-					<div
-						class="w-10 h-10 rounded-md bg-border/20 flex items-center justify-center text-muted"
-					>
-						<HugeiconsIcon icon={LinkSquare01Icon} size={20} />
-					</div>
+					<img
+						src="/images/myhappr-logo.png"
+						alt="{SITE_DATA.currentProject.name} logo"
+						class="w-12 h-12 border border-border/10 rounded-md object-cover"
+					/>
 					<div class="flex flex-col">
 						<span class="font-bold text-[0.95rem]">{SITE_DATA.currentProject.name}</span>
 						<a
@@ -156,12 +160,12 @@
 				<div
 					class="absolute -top-[13px] left-5 py-[0.15rem] px-3 text-sm font-bold bg-background rounded-full border-2 border-border/30 text-foreground"
 				>
-					Music
+					{loaded && !nowPlaying.isPlaying ? 'Last played' : 'Music'}
 				</div>
 				<div class="flex items-center gap-4 mt-2">
-					{#if spotifyData.albumImageUrl}
+					{#if nowPlaying.albumImageUrl}
 						<img
-							src={spotifyData.albumImageUrl}
+							src={nowPlaying.albumImageUrl}
 							alt="Album cover"
 							class="w-12 h-12 rounded-md object-cover"
 						/>
@@ -172,8 +176,8 @@
 					{/if}
 
 					<div class="flex flex-col">
-						<span class="font-bold text-[0.95rem] line-clamp-1">{spotifyData.title}</span>
-						<span class="text-xs text-muted line-clamp-1">{spotifyData.artist}</span>
+						<span class="font-bold text-[0.95rem] line-clamp-1">{nowPlaying.title}</span>
+						<span class="text-xs text-muted line-clamp-1">{nowPlaying.artist}</span>
 					</div>
 				</div>
 			</div>
