@@ -45,7 +45,7 @@
 				Hey, I'm {SITE_DATA.name.replace('.', '')} — an engineer
 			</h1>
 			<p class="text-xl md:text-2xl text-muted font-medium max-w-md">{SITE_DATA.intro}</p>
-			<div class="flex flex-wrap items-center gap-3 mt-2">
+			<div class="flex flex-wrap items-center gap-3 mt-2 mb-2">
 				<a
 					href="/resume.pdf"
 					download="Adebayo_Muis_Resume.pdf"
@@ -160,7 +160,7 @@
 				<div
 					class="absolute -top-[13px] left-5 py-[0.15rem] px-3 text-sm font-bold bg-background rounded-full border-2 border-border/30 text-foreground"
 				>
-					{loaded && !nowPlaying.isPlaying ? 'Last played' : 'Music'}
+					{loaded && !nowPlaying.isPlaying ? 'Last played' : 'Playing'}
 				</div>
 				<div class="flex items-center gap-4 mt-2">
 					{#if nowPlaying.albumImageUrl}
