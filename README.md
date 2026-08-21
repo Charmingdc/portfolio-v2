@@ -1,86 +1,66 @@
-# Adebayo Muis's Personal Portfolio
+# Adebayo Muis' Portfolio
 
-A personal portfolio and blog that puts my work, writing, and current focus in one place. It solves the problem of having to bounce between different platforms to see what I'm about, you can browse my latest articles, explore projects, and grab my resume without leaving the page.
+The personal portfolio of Adebayo Muis, a frontend engineer focused on fast, optimized user interfaces. The site brings together a short introduction, selected tools and projects, a markdown-powered blog, a downloadable resume, and links to social profiles.
 
-## Overview
+## What is included
 
-This is the home for my writing and my work. It's meant to feel simple and fast, whether you're on a phone or a desktop. The site is split into three main areas: a homepage with an intro, a blog where I publish longer thoughts, and a projects section where I link to things I've built.
+- **Homepage (`/`)**: Introduction, current project, technology stack, selected projects, recent music activity, resume download, and social links.
+- **Blog (`/blog`)**: Published posts loaded from Markdown files in `content/blog`, with individual article pages at `/blog/[slug]`.
+- **Projects (`/projects`)**: A list of projects with descriptions and links to their live sites or package pages. Project data lives in `src/lib/data/projects-list.ts`.
+- **Theme switching**: A light/dark theme toggle that persists the visitor's choice and uses the system preference when no choice has been saved.
+- **Now playing**: The homepage can show the latest Last.fm track through `/api/now-playing`. Without Last.fm credentials, it displays a placeholder instead.
 
-## Usage
+The project detail route (`/projects/[slug]`) exists but currently displays an “in progress” placeholder rather than a full project case study.
 
-### Browsing the site
+## Running locally
 
-- `/` shows a quick intro, the tools I use, featured projects, and a link to download my resume.
-- `/blog` lists all published posts. Clicking a post opens the full article.
-- `/projects` lists the projects I've shared. Each one links out to its live version or repository.
-
-### Site controls
-
-- Use the toggle in the bottom right to switch between dark and light mode.
-- Use the icons in the top right or the social row on the homepage to reach me on X, GitHub, or email.
-
-### Running locally
-
-Start the development server:
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
 ```
 
-Then open `http://localhost:5173` in your browser.
+Open `http://localhost:5173` in your browser.
 
-Create a production build and preview it:
+Useful commands:
 
 ```bash
-npm run build
-npm run preview
+npm run check    # Svelte and TypeScript checks
+npm run lint     # Prettier and ESLint checks
+npm run build    # Production build
+npm run preview  # Preview the production build
 ```
 
-### Content management
+## Content and configuration
 
-Blog posts are plain markdown files stored in `content/blog`. Each file starts with frontmatter for the title, description, date, order, and tags. Projects are defined in a central site data file at `src/lib/data/site-data.ts`. That means adding a new blog post or project doesn't require touching the page components.
+Add blog posts as Markdown files in `content/blog`. Posts use frontmatter for their title, description, date, order, and optional tags.
 
-## Features
+Update the portfolio's projects, tools, links, and current project in `src/lib/data/site-data.ts` and `src/lib/data/projects-list.ts`.
 
-- **Markdown-powered blog**: Write posts as markdown and they automatically appear on the blog list and detail pages.
-- **Dark and light themes**: A theme toggle saves the visitor's preference and respects the system default on first visit.
-- **Responsive layout**: The interface adapts from small phones to large desktops without losing readability.
-- **SEO and social previews**: Meta tags, Open Graph, Twitter cards, canonical links, and JSON-LD structured data are included by default.
-- **Smooth transitions**: Page changes use subtle blur and fade animations to keep navigation feeling fluid.
-- **Accessible markup**: Semantic HTML, aria labels, and keyboard-visible focus states are built into the components.
-- **Fast preloading**: Navigation links preload code and data on hover, so pages open quickly.
-- **Type-safe content**: Blog and project data are typed with TypeScript to catch mismatches early.
+To enable the now-playing card, provide these private environment variables:
 
-## Technologies Used
+```bash
+LASTFM_API_KEY=your_lastfm_api_key
+LASTFM_USERNAME=your_lastfm_username
+```
 
-| Technology | Purpose |
-| --- | --- |
-| [SvelteKit](https://kit.svelte.dev/) | Application framework and routing |
-| [Svelte](https://svelte.dev/) | Reactive UI components |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety across components and data |
-| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
-| [Vite](https://vitejs.dev/) | Build tooling and dev server |
-| [Svelte-Motion](https://www.npmjs.com/package/svelte-motion) | Declarative animations and transitions |
-| [Skriplet](https://www.npmjs.com/package/skriplet) | Markdown-based content collection |
-| [Hugeicons](https://hugeicons.com/) | Icon set used in the UI |
-| [ESLint](https://eslint.org/) | Linting |
-| [Prettier](https://prettier.io/) | Code formatting |
-| [Vercel](https://vercel.com/) | Deployment and hosting |
+The resume is served from `static/resume.pdf`. Static images are stored in `static/images`.
 
-## Author Info
+## Tech stack
+
+- [SvelteKit](https://kit.svelte.dev/) and [Svelte](https://svelte.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [Skriplet](https://www.npmjs.com/package/skriplet) for Markdown content
+- [Hugeicons](https://hugeicons.com/) for interface icons
+- [Svelte Motion](https://www.npmjs.com/package/svelte-motion) for animation utilities
+- [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code quality
+
+## Author
 
 - GitHub: [Charmingdc](https://github.com/Charmingdc)
-- X (Twitter): [@charmingdc01](https://x.com/charmingdc01)
+- X: [@charmingdc01](https://x.com/charmingdc01)
 - LinkedIn: [Adebayo Muis](https://linkedin.com/in/adebayo-muis)
 - Email: [charmingdc002@gmail.com](mailto:charmingdc002@gmail.com)
-
-## Badges
-
-[![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://kit.svelte.dev/)
-[![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-
-[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://dokugen.samueltuoyo.com)
